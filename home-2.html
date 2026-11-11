@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MailFlow Home 2 — Lifecycle Studio &amp; Developer-Grade Email</title>
+  <meta name="description" content="MailFlow Home 2: Asymmetric SaaS lifecycle studio with interactive ROI calculator, webhook trigger preview, and industry playbooks.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/public.css">
+</head>
+<body>
+  <canvas id="mf-three-bg" aria-hidden="true"></canvas>
+  <div id="mf-public-navbar-host"></div>
+
+  <main>
+    <!-- 1. Asymmetric Split Hero (Distinct from Home 1) -->
+    <section class="mf-hero">
+      <div class="mf-container">
+        <div class="mf-h2-hero-grid">
+          <div class="text-start mf-gsap-hero">
+            <div class="mf-eyebrow mb-3">
+              <i data-lucide="cpu" style="width:14px;height:14px;"></i>
+              <span>Home 2 · Lifecycle &amp; Event Studio</span>
+            </div>
+            <h1 class="mf-hero-title mf-gradient-text" style="font-size:clamp(2.2rem,4.2vw,3.55rem);" data-i18n="home2.heroTitle">
+              Automate Revenue, Not Busywork.
+            </h1>
+            <p class="lead mb-4" style="color:var(--mf-text-muted);font-size:1.1rem;" data-i18n="home2.heroDesc">
+              Combine visual customer journeys with instant behavioral triggers. Built for marketing teams who want Resend-level clarity and Customer.io-level automation depth.
+            </p>
+            <div class="d-flex flex-wrap gap-3 mb-4">
+              <a href="dashboard.html#automation" class="mf-btn mf-btn-primary mf-btn-lg">
+                <span>Launch Automation Studio</span>
+                <i data-lucide="arrow-right" class="mf-rtl-flip"></i>
+              </a>
+              <a href="index.html" class="mf-btn mf-btn-secondary mf-btn-lg">
+                <i data-lucide="layout"></i>
+                <span>View Home 1</span>
+              </a>
+            </div>
+            <div class="d-flex flex-wrap gap-3 small" style="color:var(--mf-text-muted);">
+              <span><i data-lucide="check-circle-2" style="width:15px;height:15px;display:inline;color:var(--mf-success);"></i> 99.4% Inbox Rate</span>
+              <span><i data-lucide="check-circle-2" style="width:15px;height:15px;display:inline;color:var(--mf-success);"></i> &lt; 180ms Webhook Dispatch</span>
+              <span><i data-lucide="check-circle-2" style="width:15px;height:15px;display:inline;color:var(--mf-success);"></i> Native RTL &amp; Dark Mode</span>
+            </div>
+          </div>
+
+          <!-- Interactive Studio Switcher Card -->
+          <div class="mf-preview-shell w-100 mf-gsap-hero">
+            <div class="mf-preview-chrome">
+              <div class="mf-window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+              <div class="mf-preview-tabs" role="tablist" aria-label="Home 2 Studio Modes">
+                <button type="button" class="mf-preview-tab is-active" data-h2-tab="email">Visual Email</button>
+                <button type="button" class="mf-preview-tab" data-h2-tab="event">Trigger Payload</button>
+                <button type="button" class="mf-preview-tab" data-h2-tab="metrics">Live Cohort</button>
+              </div>
+            </div>
+            <div class="mf-preview-body text-start" id="mf-h2-studio-body">
+              <!-- Hydrated by js/home2.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Interactive Lifecycle ROI & Deliverability Estimator -->
+    <section class="mf-section pt-3">
+      <div class="mf-container">
+        <div class="mf-section-header" data-aos="fade-up">
+          <div class="mf-eyebrow"><i data-lucide="calculator" style="width:14px;height:14px;"></i> Interactive Estimator</div>
+          <h2 class="mf-section-title">Forecast Your Email Automation Lift</h2>
+          <p class="mf-section-desc">Adjust your active list size and monthly campaign cadence to model projected opens, clicks, and lifecycle revenue.</p>
+        </div>
+
+        <div class="mf-card p-4 p-lg-5" data-aos="fade-up">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-6 d-flex flex-column gap-4">
+              <div>
+                <div class="d-flex justify-content-between mb-2">
+                  <label class="mf-label mb-0" for="h2-subs-range">Active Subscribers</label>
+                  <strong style="color:var(--mf-primary);" id="h2-subs-val">25,000</strong>
+                </div>
+                <input type="range" class="mf-range-input" id="h2-subs-range" min="1000" max="150000" step="1000" value="25000">
+              </div>
+              <div>
+                <div class="d-flex justify-content-between mb-2">
+                  <label class="mf-label mb-0" for="h2-sends-range">Automated Touchpoints / Month</label>
+                  <strong style="color:var(--mf-primary);" id="h2-sends-val">6</strong>
+                </div>
+                <input type="range" class="mf-range-input" id="h2-sends-range" min="1" max="20" step="1" value="6">
+              </div>
+              <div class="small" style="color:var(--mf-text-muted);">
+                Modeled using MailFlow SaaS benchmark averages (48.6% open rate, 11.8% CTR, $1.40 avg. revenue per qualified click).
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="mf-card-grid mf-card-grid-3">
+                <div class="p-3 rounded-3 text-center" style="background:var(--mf-bg-elevated);border:1px solid var(--mf-border);">
+                  <div class="small" style="color:var(--mf-text-muted);">Monthly Sends</div>
+                  <div class="h4 mb-0 mt-1" id="h2-out-sends">150,000</div>
+                </div>
+                <div class="p-3 rounded-3 text-center" style="background:var(--mf-bg-elevated);border:1px solid var(--mf-border);">
+                  <div class="small" style="color:var(--mf-text-muted);">Est. Link Clicks</div>
+                  <div class="h4 mb-0 mt-1" style="color:var(--mf-info);" id="h2-out-clicks">8,602</div>
+                </div>
+                <div class="p-3 rounded-3 text-center" style="background:var(--mf-primary-soft);border:1px solid var(--mf-primary);">
+                  <div class="small" style="color:var(--mf-text-muted);">Est. Flow Revenue</div>
+                  <div class="h4 mb-0 mt-1" style="color:var(--mf-success);" id="h2-out-rev">$12,043</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Bento Architecture Showcase -->
+    <section class="mf-section pt-2">
+      <div class="mf-container">
+        <div class="mf-section-header" data-aos="fade-up">
+          <div class="mf-eyebrow"><i data-lucide="grid" style="width:14px;height:14px;"></i> Modern Architecture</div>
+          <h2 class="mf-section-title">Designed Like a 2026 Product Workspace</h2>
+          <p class="mf-section-desc">Balanced bento modules engineered for clarity across desktop, tablet, mobile, and 4K displays.</p>
+        </div>
+
+        <div class="mf-bento-grid">
+          <article class="mf-card mf-bento-7" data-aos="fade-up">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="mf-badge mf-badge-primary">Behavioral Branching</span>
+              <a href="dashboard.html#automation" class="small fw-semibold">Open Studio &rarr;</a>
+            </div>
+            <h3 class="h4">Multi-Step Journey Orchestration</h3>
+            <p>React to trial signups, cart abandonments, and product milestones with conditional wait steps and instant tag routing.</p>
+            <div class="mf-card-img-wrap mb-0 mt-auto" style="aspect-ratio:16/8;">
+              <img src="assets/img/a%20(3).jpg" alt="Marketing team planning behavioral email journeys" loading="eager">
+            </div>
+          </article>
+
+          <article class="mf-card mf-bento-5" data-aos="fade-up" data-aos-delay="80">
+            <span class="mf-badge mf-badge-success mb-3" style="width:fit-content;">Deliverability Shield</span>
+            <h3 class="h4">Pre-Send Spam &amp; DNS Check</h3>
+            <p>Every campaign is automatically scanned for SPF, DKIM, DMARC alignment and broken links before leaving your queue.</p>
+            <div class="mt-auto p-3 rounded-3 d-flex flex-column gap-2" style="background:var(--mf-bg-elevated);border:1px solid var(--mf-border);">
+              <div class="d-flex justify-content-between small"><span>DMARC Alignment</span><span class="mf-badge mf-badge-success">Verified</span></div>
+              <div class="d-flex justify-content-between small"><span>Link Reputation</span><span class="mf-badge mf-badge-success">Clean</span></div>
+              <div class="d-flex justify-content-between small"><span>List Hygiene</span><span class="mf-badge mf-badge-info">99.6% Valid</span></div>
+            </div>
+          </article>
+
+          <article class="mf-card mf-bento-5" data-aos="fade-up">
+            <span class="mf-badge mf-badge-info mb-3" style="width:fit-content;">Bi-Directional UI</span>
+            <h3 class="h4">Native LTR &amp; RTL Campaigns</h3>
+            <p>Design English and Arabic campaigns side by side with mirrored layouts, logical spacing, and crisp dark-mode contrast.</p>
+            <div class="mt-auto d-flex flex-wrap gap-2">
+              <button type="button" class="mf-btn mf-btn-secondary mf-btn-sm" data-mf-dir-toggle>Switch RTL / LTR</button>
+              <button type="button" class="mf-btn mf-btn-ghost mf-btn-sm" data-mf-theme-toggle>Switch Light / Dark</button>
+            </div>
+          </article>
+
+          <article class="mf-card mf-bento-7" data-aos="fade-up" data-aos-delay="80">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="mf-badge mf-badge-warning">Live Attribution</span>
+              <a href="dashboard.html#analytics" class="small fw-semibold">View Telemetry &rarr;</a>
+            </div>
+            <h3 class="h4">Cohort &amp; Revenue Telemetry</h3>
+            <p>Compare open rates, click velocity, and subscriber growth across 7-day, 30-day, 90-day, and annual windows.</p>
+            <div class="mf-card-img-wrap mb-0 mt-auto" style="aspect-ratio:16/8;">
+              <img src="assets/img/a%20(25).jpg" alt="Email cohort performance analytics dashboard" loading="eager">
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Tabbed Industry Playbooks -->
+    <section class="mf-section pt-2">
+      <div class="mf-container">
+        <div class="mf-section-header" data-aos="fade-up">
+          <div class="mf-eyebrow"><i data-lucide="briefcase" style="width:14px;height:14px;"></i> Industry Playbooks</div>
+          <h2 class="mf-section-title">Tailored Workflows for Every Business Model</h2>
+          <div class="d-flex flex-wrap justify-content-center gap-2 mt-4">
+            <button type="button" class="mf-btn mf-btn-primary mf-btn-sm mf-playbook-btn" data-playbook="saas">SaaS &amp; DevTools</button>
+            <button type="button" class="mf-btn mf-btn-secondary mf-btn-sm mf-playbook-btn" data-playbook="ecommerce">Ecommerce &amp; DTC</button>
+            <button type="button" class="mf-btn mf-btn-secondary mf-btn-sm mf-playbook-btn" data-playbook="agencies">Agencies &amp; Media</button>
+          </div>
+        </div>
+
+        <div class="mf-card p-4 p-lg-5" data-aos="fade-up" id="mf-h2-playbook-stage">
+          <!-- Hydrated by js/home2.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Before vs After Comparison -->
+    <section class="mf-section pt-2">
+      <div class="mf-container">
+        <div class="mf-section-header" data-aos="fade-up">
+          <h2 class="mf-section-title">Why Teams Migrate to MailFlow</h2>
+          <p class="mf-section-desc">Replace fragmented tools and static batch blasts with unified lifecycle automation.</p>
+        </div>
+
+        <div class="mf-card-grid mf-card-grid-2">
+          <article class="mf-card" data-aos="fade-up">
+            <span class="mf-badge mf-badge-neutral mb-3" style="width:fit-content;">Legacy Batch Email Tools</span>
+            <h3 class="h5">Manual Lists &amp; Guesswork</h3>
+            <ul class="mf-check-list mt-2">
+              <li><i data-lucide="x-circle" style="color:var(--mf-danger);"></i><span>Disconnected CSV spreadsheets and stale segments</span></li>
+              <li><i data-lucide="x-circle" style="color:var(--mf-danger);"></i><span>One-size-fits-all blasts that hurt sender reputation</span></li>
+              <li><i data-lucide="x-circle" style="color:var(--mf-danger);"></i><span>Clunky HTML editors that break on dark mode mobile</span></li>
+            </ul>
+          </article>
+
+          <article class="mf-card mf-pricing-card is-featured" data-aos="fade-up" data-aos-delay="100">
+            <span class="mf-badge mf-badge-primary mb-3" style="width:fit-content;">MailFlow 2026 Workspace</span>
+            <h3 class="h5">Automated Connections &amp; Clarity</h3>
+            <ul class="mf-check-list mt-2">
+              <li><i data-lucide="check-circle-2"></i><span>Live computed segments synced with Shopify, Stripe &amp; CRM</span></li>
+              <li><i data-lucide="check-circle-2"></i><span>Visual trigger-condition-action flows running 24/7</span></li>
+              <li><i data-lucide="check-circle-2"></i><span>Responsive block builder with instant desktop, mobile &amp; RTL previews</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Final CTA -->
+    <section class="mf-section pt-2">
+      <div class="mf-container">
+        <div class="mf-cta-banner" data-aos="zoom-in">
+          <h2 class="mf-section-title">Experience the Marketer Dashboard Live</h2>
+          <p class="mf-section-desc mx-auto mb-4" style="max-width:580px;">
+            Jump straight into the interactive dashboard—build an email, test an automation flow, or explore real-time charts.
+          </p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="dashboard.html#overview" class="mf-btn mf-btn-primary mf-btn-lg">Open Marketer Dashboard</a>
+            <a href="register.html" class="mf-btn mf-btn-secondary mf-btn-lg">Create Demo Account</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="mf-public-footer-host"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+
+  <script src="js/store.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/theme-rtl.js"></script>
+  <script src="js/ajax-mock.js"></script>
+  <script src="js/three-bg.js"></script>
+  <script src="js/public-nav.js"></script>
+  <script src="js/home2.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features — MailFlow Email Marketing SaaS</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/public.css">
+</head>
+<body>
+  <canvas id="mf-three-bg" aria-hidden="true"></canvas>
+  <div id="mf-public-navbar-host"></div>
+
+  <main>
+    <!-- Hero -->
+    <section class="mf-hero pb-4">
+      <div class="mf-container">
+        <div class="mf-hero-centered">
+          <div class="mf-eyebrow mf-gsap-hero"><i data-lucide="layers" style="width:14px;height:14px;"></i> Platform Capabilities</div>
+          <h1 class="mf-hero-title mf-gradient-text mf-gsap-hero" data-i18n="features.heroTitle">
+            Built for Speed, Precision &amp; Deliverability.
+          </h1>
+          <p class="mf-hero-desc mf-gsap-hero" data-i18n="features.heroDesc">
+            Every capability inside MailFlow is crafted with its own dedicated workspace — from drag-and-drop block editing to multi-branch automation.
+          </p>
+          <div class="mf-hero-actions mf-gsap-hero mb-2">
+            <a href="dashboard.html" class="mf-btn mf-btn-primary mf-btn-lg">Try Interactive Workspace</a>
+            <a href="pricing.html" class="mf-btn mf-btn-secondary mf-btn-lg">Compare Plans</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1. Drag-and-Drop Email Builder (Interactive Mini Block Switcher Band) -->
+    <section class="mf-section pt-4" id="email-builder">
+      <div class="mf-container">
+        <div class="mf-feature-band" data-aos="fade-up">
+          <div class="mf-split-panel">
+            <div>
+              <span class="mf-badge mf-badge-primary mb-3">01 · Drag-and-Drop Email Builder</span>
+              <h2 class="h3">Compose Pixel-Perfect Campaigns Without Touching HTML</h2>
+              <p>Combine Heading, Paragraph, Image, CTA Button, Divider, and Social Link blocks into responsive layouts. Preview desktop and mobile widths side by side before saving to your template library.</p>
+              <div class="d-flex flex-wrap gap-2 mb-4">
+                <button type="button" class="mf-btn mf-btn-secondary mf-btn-sm mf-feat-preview-btn" data-mode="desktop">Desktop View</button>
+                <button type="button" class="mf-btn mf-btn-ghost mf-btn-sm mf-feat-preview-btn" data-mode="mobile">Mobile View</button>
+                <a href="dashboard.html#builder" class="mf-btn mf-btn-primary mf-btn-sm">Open Full Editor</a>
+              </div>
+            </div>
+            <div class="mf-feature-visual-box">
+              <div id="mf-feat-builder-mockup" class="mx-auto p-3 rounded-3 transition-all" style="background:var(--mf-surface);border:1px solid var(--mf-border-strong);max-width:100%;">
+                <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom" style="border-color:var(--mf-border) !important;">
+                  <span class="small fw-bold" style="color:var(--mf-primary);">BLOCK STUDIO PREVIEW</span>
+                  <span class="mf-badge mf-badge-info" id="mf-feat-builder-badge">640px Desktop</span>
+                </div>
+                <div class="mf-card-img-wrap mb-2" style="aspect-ratio:16/8;">
+                  <img src="assets/img/a%20(13).jpg" alt="Email builder workspace banner" loading="eager">
+                </div>
+                <div class="fw-bold mb-1">Spring Product Spotlight</div>
+                <p class="small mb-3">Personalized for {{first_name}} · Responsive 2-column grid</p>
+                <span class="mf-btn mf-btn-primary mf-btn-sm w-100">Explore New Release</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Campaign Scheduling & 3. Smart Email Automation (Asymmetric 2-Column Showcase) -->
+    <section class="mf-section pt-2" id="automation">
+      <div class="mf-container">
+        <div class="mf-card-grid mf-card-grid-2">
+          <!-- 2. Campaign Scheduling -->
+          <article class="mf-card" data-aos="fade-up">
+            <span class="mf-badge mf-badge-info mb-3" style="width:fit-content;">02 · Campaign Scheduling</span>
+            <h2 class="h4">Timezone-Aware Send Windows</h2>
+            <p>Schedule campaigns for local inbox arrival at peak engagement hours, or pause and reschedule drafts with one click.</p>
+            <div class="mf-feature-visual-box mt-2">
+              <div class="d-flex justify-content-between small fw-semibold mb-2">
+                <span>Tue, Nov 18 · 09:00 AM Recipient Local Time</span>
+                <span class="mf-badge mf-badge-success">Optimal</span>
+              </div>
+              <div class="d-grid gap-2" style="grid-template-columns:repeat(4,1fr);">
+                <div class="p-2 rounded text-center small" style="background:var(--mf-surface);border:1px solid var(--mf-border);">NYC 09:00</div>
+                <div class="p-2 rounded text-center small" style="background:var(--mf-surface);border:1px solid var(--mf-border);">LDN 09:00</div>
+                <div class="p-2 rounded text-center small" style="background:var(--mf-primary-soft);border:1px solid var(--mf-primary);">DXB 09:00</div>
+                <div class="p-2 rounded text-center small" style="background:var(--mf-surface);border:1px solid var(--mf-border);">TYO 09:00</div>
+              </div>
+            </div>
+            <div class="mf-card-footer">
+              <a href="dashboard.html#campaigns" class="mf-btn mf-btn-secondary mf-btn-sm">Schedule a Campaign</a>
+            </div>
+          </article>
+
+          <!-- 3. Smart Email Automation -->
+          <article class="mf-card" data-aos="fade-up" data-aos-delay="100">
+            <span class="mf-badge mf-badge-primary mb-3" style="width:fit-content;">03 · Smart Email Automation</span>
+            <h2 class="h4">Trigger, Condition &amp; Action Flows</h2>
+            <p>Build Welcome, Abandoned Cart, Birthday, New Subscriber, and Customer Re-engagement workflows with visual branching logic.</p>
+            <div class="mf-feature-visual-box mt-2 d-flex flex-column gap-2">
+              <div class="d-flex align-items-center justify-content-between p-2 rounded" style="background:var(--mf-surface);border:1px solid var(--mf-border);">
+                <span class="small fw-semibold"><i data-lucide="zap" style="width:14px;height:14px;display:inline;"></i> Trigger: Cart Abandoned</span>
+                <span class="mf-badge mf-badge-primary">1h Delay</span>
+              </div>
+              <div class="d-flex align-items-center justify-content-between p-2 rounded" style="background:var(--mf-surface);border:1px solid var(--mf-border);">
+                <span class="small fw-semibold"><i data-lucide="git-branch" style="width:14px;height:14px;display:inline;"></i> Condition: Order &gt; $100?</span>
+                <span class="mf-badge mf-badge-warning">Yes / No</span>
+              </div>
+              <div class="d-flex align-items-center justify-content-between p-2 rounded" style="background:var(--mf-surface);border:1px solid var(--mf-border);">
+                <span class="small fw-semibold"><i data-lucide="mail" style="width:14px;height:14px;display:inline;"></i> Action: Send 10% Recovery</span>
+                <span class="mf-badge mf-badge-success">24.1% Conv</span>
+              </div>
+            </div>
+            <div class="mf-card-footer">
+              <a href="dashboard.html#automation" class="mf-btn mf-btn-primary mf-btn-sm">Open Flow Builder</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Audience Segmentation & 5. Contact Management (Reversed Split Showcase) -->
+    <section class="mf-section pt-2">
+      <div class="mf-container">
+        <div class="mf-feature-band" data-aos="fade-up">
+          <div class="mf-split-panel">
+            <div class="mf-media-frame">
+              <img src="assets/img/a%20(20).jpg" alt="Marketer reviewing audience segmentation" loading="eager">
+            </div>
+            <div>
+              <span class="mf-badge mf-badge-success mb-3">04 &amp; 05 · Segmentation &amp; Contact Management</span>
+              <h2 class="h3">Hyper-Targeted Segments Over Clean Contact Profiles</h2>
+              <p>Manage Active, New, and Unsubscribed contacts with CSV bulk imports, tags, and audience groups. Create live segments filtered by subscriber activity, location, and engagement level—with instant contact counts.</p>
+              <div class="d-flex flex-wrap gap-2 mt-3">
+                <a href="dashboard.html#contacts" class="mf-btn mf-btn-primary mf-btn-sm">Manage Contacts</a>
+                <a href="dashboard.html#segments" class="mf-btn mf-btn-secondary mf-btn-sm">Build a Segment</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. A/B Testing & 7. Real-Time Analytics & 9. Performance Tracking -->
+    <section class="mf-section pt-2" id="ab-testing">
+      <div class="mf-container">
+        <div class="mf-card-grid mf-card-grid-3">
+          <!-- 6. A/B Testing -->
+          <article class="mf-card" data-aos="fade-up">
+            <span class="mf-badge mf-badge-warning mb-3" style="width:fit-content;">06 · A/B Testing</span>
+            <h3 class="h5">Automated Winner Selection</h3>
+            <p class="small">Test subject lines, sender names, and CTA copy on a sample slice before deploying the winner.</p>
+            <div class="mf-feature-visual-box mt-auto">
+              <div class="small mb-2 d-flex justify-content-between"><span>Variant A</span><strong>39.2% Open</strong></div>
+              <div class="progress mb-3" style="height:7px;"><div class="progress-bar bg-secondary" style="width:58%;"></div></div>
+              <div class="small mb-2 d-flex justify-content-between"><span>Variant B (Winner)</span><strong style="color:var(--mf-success);">52.8% Open</strong></div>
+              <div class="progress" style="height:7px;"><div class="progress-bar" style="width:82%;background:var(--mf-success);"></div></div>
+            </div>
+          </article>
+
+          <!-- 7. Real-Time Analytics -->
+          <article class="mf-card" id="analytics" data-aos="fade-up" data-aos-delay="80">
+            <span class="mf-badge mf-badge-primary mb-3" style="width:fit-content;">07 · Real-Time Analytics</span>
+            <h3 class="h5">Open, Click &amp; Growth Telemetry</h3>
+            <p class="small">Interactive charts track campaign performance, open vs. click ratios, and subscriber velocity over 7d to 12m.</p>
+            <div class="mf-card-img-wrap mt-auto mb-0" style="aspect-ratio:16/9;">
+              <img src="assets/img/a%20(11).jpg" alt="Real-time email analytics charts on laptop" loading="eager">
+            </div>
+          </article>
+
+          <!-- 9. Performance Tracking -->
+          <article class="mf-card" data-aos="fade-up" data-aos-delay="160">
+            <span class="mf-badge mf-badge-success mb-3" style="width:fit-content;">09 · Performance Tracking</span>
+            <h3 class="h5">Deliverability &amp; Bounce Funnel</h3>
+            <p class="small">Monitor 99.4% delivery rate, 0.38% bounce threshold, and unsubscribe trends across every audience list.</p>
+            <div class="mf-feature-visual-box mt-auto">
+              <div class="d-flex justify-content-between small py-1 border-bottom" style="border-color:var(--mf-border) !important;">
+                <span>Delivery Rate</span><strong style="color:var(--mf-success);">99.5%</strong>
+              </div>
+              <div class="d-flex justify-content-between small py-1 border-bottom" style="border-color:var(--mf-border) !important;">
+                <span>Avg. CTR</span><strong>11.8%</strong>
+              </div>
+              <div class="d-flex justify-content-between small py-1">
+                <span>Bounce Rate</span><strong>0.4%</strong>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Email Templates & 10. Third-Party Integrations -->
+    <section class="mf-section pt-2">
+      <div class="mf-container">
+        <div class="mf-card-grid mf-card-grid-2">
+          <!-- 8. Email Templates -->
+          <article class="mf-card" data-aos="fade-up">
+            <span class="mf-badge mf-badge-primary mb-3" style="width:fit-content;">08 · Email Templates</span>
+            <h2 class="h4">6 Curated Template Categories</h2>
+            <p>Start immediately with Newsletter, Promotional, Welcome Email, Product Announcement, Event Invitation, and Transactional blueprints.</p>
+            <div class="mf-card-img-wrap">
+              <img src="assets/img/a%20(14).jpg" alt="Minimalist email templates concept" loading="eager">
+            </div>
+            <div class="mf-card-footer">
+              <a href="dashboard.html#templates" class="mf-btn mf-btn-primary mf-btn-sm">Browse Template Library</a>
+            </div>
+          </article>
+
+          <!-- 10. Third-Party Integrations -->
+          <article class="mf-card" data-aos="fade-up" data-aos-delay="100">
+            <span class="mf-badge mf-badge-info mb-3" style="width:fit-content;">10 · Third-Party Integrations</span>
+            <h2 class="h4">Ecommerce, CRM, Analytics &amp; Payments</h2>
+            <p>Connect Shopify, WooCommerce, HubSpot, Salesforce, GA4, Mixpanel, Webflow, Stripe, and Zapier directly inside your dashboard.</p>
+            <div class="mf-card-img-wrap">
+              <img src="assets/img/a%20(9).jpg" alt="Connected SaaS apps and integrations" loading="eager">
+            </div>
+            <div class="mf-card-footer">
+              <a href="dashboard.html#integrations" class="mf-btn mf-btn-secondary mf-btn-sm">Explore 12 Integrations</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="mf-public-footer-host"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+
+  <script src="js/store.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/theme-rtl.js"></script>
+  <script src="js/ajax-mock.js"></script>
+  <script src="js/three-bg.js"></script>
+  <script src="js/public-nav.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.mf-feat-preview-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var mode = btn.getAttribute('data-mode');
+          var mockup = document.getElementById('mf-feat-builder-mockup');
+          var badge = document.getElementById('mf-feat-builder-badge');
+          document.querySelectorAll('.mf-feat-preview-btn').forEach(function (b) {
+            b.classList.toggle('mf-btn-secondary', b === btn);
+            b.classList.toggle('mf-btn-ghost', b !== btn);
+          });
+          if (mode === 'mobile') {
+            mockup.style.maxWidth = '310px';
+            badge.textContent = '320px Mobile';
+          } else {
+            mockup.style.maxWidth = '100%';
+            badge.textContent = '640px Desktop';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,604 @@
+/* ==========================================================================
+   MailFlow Public Pages Stylesheet (Home, Features, Pricing, Auth)
+   ========================================================================== */
+
+/* Hero Section */
+.mf-hero {
+  position: relative;
+  padding-block: 5.5rem 4.5rem;
+  background-image: var(--mf-hero-glow);
+  z-index: 1;
+}
+
+@media (max-width: 767.98px) {
+  .mf-hero {
+    padding-block: 3.5rem 3rem;
+  }
+}
+
+.mf-hero-centered {
+  max-width: 820px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.mf-hero-title {
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.12;
+  margin-block-end: 1.25rem;
+}
+
+.mf-hero-desc {
+  font-size: clamp(1.02rem, 1.5vw, 1.2rem);
+  max-width: 650px;
+  margin-inline: auto;
+  margin-block-end: 2rem;
+}
+
+.mf-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  margin-block-end: 3.25rem;
+}
+
+/* Interactive Dashboard Preview Mockup on Homepage */
+.mf-preview-shell {
+  max-width: 1120px;
+  margin-inline: auto;
+  background: var(--mf-surface);
+  border: 1px solid var(--mf-border-strong);
+  border-radius: var(--mf-radius-xl);
+  box-shadow: var(--mf-shadow-lg), var(--mf-shadow-glow);
+  overflow: hidden;
+}
+
+.mf-preview-chrome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.35rem;
+  background: var(--mf-bg-elevated);
+  border-bottom: 1px solid var(--mf-border);
+  flex-wrap: wrap;
+}
+
+.mf-window-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.mf-window-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--mf-border-strong);
+}
+
+.mf-window-dots span:nth-child(1) { background: #EF4444; }
+.mf-window-dots span:nth-child(2) { background: #F59E0B; }
+.mf-window-dots span:nth-child(3) { background: #10B981; }
+
+.mf-preview-tabs {
+  display: inline-flex;
+  gap: 0.35rem;
+  background: var(--mf-surface);
+  padding: 0.25rem;
+  border-radius: var(--mf-radius-pill);
+  border: 1px solid var(--mf-border);
+  flex-wrap: wrap;
+}
+
+.mf-preview-tab {
+  border: none;
+  background: transparent;
+  color: var(--mf-text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--mf-radius-pill);
+  cursor: pointer;
+  transition: all var(--mf-transition);
+}
+
+.mf-preview-tab.is-active {
+  background: var(--mf-primary);
+  color: #FFFFFF;
+}
+
+.mf-preview-body {
+  padding: 1.5rem;
+}
+
+.mf-preview-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.25rem;
+  text-align: start;
+}
+
+@media (max-width: 991.98px) {
+  .mf-preview-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.mf-preview-sidebar {
+  background: var(--mf-bg-elevated);
+  border: 1px solid var(--mf-border);
+  border-radius: var(--mf-radius-md);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.mf-preview-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 10px;
+  font-size: 0.86rem;
+  color: var(--mf-text-muted);
+  font-weight: 500;
+}
+
+.mf-preview-nav-item.is-active {
+  background: var(--mf-primary-soft);
+  color: var(--mf-secondary);
+}
+
+[data-theme="light"] .mf-preview-nav-item.is-active {
+  color: var(--mf-primary);
+}
+
+.mf-preview-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-block-end: 1rem;
+}
+
+@media (max-width: 575.98px) {
+  .mf-preview-kpis {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.mf-mini-stat {
+  background: var(--mf-bg-elevated);
+  border: 1px solid var(--mf-border);
+  border-radius: var(--mf-radius-sm);
+  padding: 1rem;
+}
+
+.mf-mini-stat-label {
+  font-size: 0.78rem;
+  color: var(--mf-text-muted);
+  margin-block-end: 0.25rem;
+}
+
+.mf-mini-stat-val {
+  font-family: var(--mf-font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--mf-text);
+}
+
+/* Stat Strip */
+.mf-stat-card {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.mf-stat-number {
+  font-family: var(--mf-font-display);
+  font-size: clamp(2rem, 3.2vw, 2.85rem);
+  font-weight: 800;
+  color: var(--mf-primary);
+  line-height: 1.1;
+  margin-block-end: 0.4rem;
+}
+
+/* Automation Workflow Node Showcase */
+.mf-workflow-stage {
+  background: var(--mf-surface);
+  border: 1px solid var(--mf-border-strong);
+  border-radius: var(--mf-radius-xl);
+  padding: 2rem;
+  box-shadow: var(--mf-shadow-md);
+}
+
+.mf-workflow-track {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: stretch;
+  position: relative;
+}
+
+@media (max-width: 991.98px) {
+  .mf-workflow-track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575.98px) {
+  .mf-workflow-track {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.mf-wf-node {
+  background: var(--mf-bg-elevated);
+  border: 1px solid var(--mf-border);
+  border-radius: var(--mf-radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: start;
+  cursor: pointer;
+  transition: all var(--mf-transition);
+}
+
+.mf-wf-node.is-selected,
+.mf-wf-node:hover {
+  border-color: var(--mf-primary);
+  box-shadow: 0 0 0 2px var(--mf-primary-soft);
+}
+
+/* How It Works Timeline */
+.mf-step-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--mf-primary), #6D28D9);
+  color: #FFFFFF;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-block-end: 1rem;
+  margin-inline: auto;
+}
+
+/* Audience Split Showcase */
+.mf-split-panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (max-width: 991.98px) {
+  .mf-split-panel {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+}
+
+.mf-media-frame {
+  border-radius: var(--mf-radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--mf-border-strong);
+  box-shadow: var(--mf-shadow-md);
+  aspect-ratio: 16 / 10;
+  background: var(--mf-bg-elevated);
+}
+
+.mf-media-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Integration Tiles */
+.mf-integration-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.4rem 1rem;
+  background: var(--mf-surface);
+  border: 1px solid var(--mf-border);
+  border-radius: var(--mf-radius-md);
+  height: 100%;
+  transition: all var(--mf-transition);
+}
+
+.mf-integration-card:hover {
+  border-color: var(--mf-primary);
+  transform: translateY(-3px);
+}
+
+/* Testimonials Swiper */
+.mf-testimonial-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 270px;
+}
+
+.mf-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--mf-primary);
+  flex-shrink: 0;
+}
+
+.swiper-slide {
+  height: auto;
+}
+
+.swiper-pagination-bullet {
+  background: var(--mf-text-muted);
+  opacity: 0.45;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--mf-primary);
+  opacity: 1;
+}
+
+/* Final CTA Banner */
+.mf-cta-banner {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.22) 0%, rgba(33, 29, 53, 0.92) 60%, rgba(109, 40, 217, 0.26) 100%);
+  border: 1px solid var(--mf-border-strong);
+  border-radius: var(--mf-radius-xl);
+  padding: 3.5rem 2rem;
+  text-align: center;
+  box-shadow: var(--mf-shadow-lg);
+}
+
+[data-theme="light"] .mf-cta-banner {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.12) 0%, #FFFFFF 55%, rgba(167, 139, 250, 0.18) 100%);
+}
+
+/* ==========================================================================
+   Home 2 — Split-Screen Lifecycle Studio Layout
+   ========================================================================== */
+.mf-h2-hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (max-width: 991.98px) {
+  .mf-h2-hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+}
+
+.mf-h2-code {
+  font-family: var(--mf-font-mono);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  background: var(--mf-bg);
+  border: 1px solid var(--mf-border);
+  border-radius: var(--mf-radius-sm);
+  padding: 1rem;
+  color: var(--mf-secondary);
+  overflow-x: auto;
+  margin: 0;
+  direction: ltr;
+  text-align: left;
+}
+
+[data-theme="light"] .mf-h2-code {
+  background: #181529;
+  color: #E2D9FD;
+}
+
+.mf-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.mf-bento-7 { grid-column: span 7; }
+.mf-bento-5 { grid-column: span 5; }
+
+@media (max-width: 991.98px) {
+  .mf-bento-7,
+  .mf-bento-5 {
+    grid-column: span 12;
+  }
+}
+
+.mf-range-input {
+  width: 100%;
+  accent-color: var(--mf-primary);
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Features Page Distinct Layouts
+   ========================================================================== */
+.mf-feature-band {
+  background: var(--mf-surface);
+  border: 1px solid var(--mf-border);
+  border-radius: var(--mf-radius-xl);
+  padding: 2.25rem;
+  box-shadow: var(--mf-shadow-sm);
+}
+
+@media (max-width: 767.98px) {
+  .mf-feature-band {
+    padding: 1.5rem;
+  }
+}
+
+.mf-feature-visual-box {
+  background: var(--mf-bg-elevated);
+  border: 1px solid var(--mf-border);
+  border-radius: var(--mf-radius-md);
+  padding: 1.25rem;
+}
+
+/* ==========================================================================
+   Pricing Page
+   ========================================================================== */
+.mf-billing-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem;
+  border-radius: var(--mf-radius-pill);
+  background: var(--mf-surface);
+  border: 1px solid var(--mf-border-strong);
+}
+
+.mf-billing-btn {
+  border: none;
+  background: transparent;
+  color: var(--mf-text-muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--mf-radius-pill);
+  cursor: pointer;
+  transition: all var(--mf-transition);
+}
+
+.mf-billing-btn.is-active {
+  background: var(--mf-primary);
+  color: #FFFFFF;
+}
+
+.mf-pricing-card {
+  position: relative;
+}
+
+.mf-pricing-card.is-featured {
+  border-color: var(--mf-primary);
+  box-shadow: var(--mf-shadow-lg), var(--mf-shadow-glow);
+}
+
+.mf-price-amount {
+  font-family: var(--mf-font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--mf-text);
+  line-height: 1;
+}
+
+.mf-check-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.mf-check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.9rem;
+  color: var(--mf-text-muted);
+}
+
+.mf-check-list svg {
+  width: 17px;
+  height: 17px;
+  color: var(--mf-success);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   Auth Pages (Login & Register — No Public Header or Footer)
+   ========================================================================== */
+.mf-auth-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-image: var(--mf-hero-glow);
+  position: relative;
+}
+
+.mf-auth-toolbar {
+  position: fixed;
+  top: 1.25rem;
+  inset-inline-end: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 20;
+}
+
+.mf-auth-card {
+  width: 100%;
+  max-width: 470px;
+  background: var(--mf-surface-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--mf-border-strong);
+  border-radius: var(--mf-radius-xl);
+  padding: 2.25rem;
+  box-shadow: var(--mf-shadow-lg), var(--mf-shadow-glow);
+  position: relative;
+  z-index: 5;
+}
+
+@media (max-width: 575.98px) {
+  .mf-auth-card {
+    padding: 1.6rem 1.25rem;
+  }
+}
+
+.mf-password-wrap {
+  position: relative;
+}
+
+.mf-password-wrap .mf-input {
+  padding-inline-end: 2.8rem;
+}
+
+.mf-password-toggle {
+  position: absolute;
+  top: 50%;
+  inset-inline-end: 0.75rem;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--mf-text-muted);
+  cursor: pointer;
+  padding: 0.2rem;
+  display: inline-flex;
+}
+
+.mf-divider-text {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--mf-text-muted);
+  font-size: 0.8rem;
+  margin-block: 1.15rem;
+}
+
+.mf-divider-text::before,
+.mf-divider-text::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--mf-border);
+}
+

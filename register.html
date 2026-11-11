@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account — MailFlow SaaS</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/public.css">
+</head>
+<body class="mf-auth-page">
+  <canvas id="mf-three-bg" aria-hidden="true"></canvas>
+
+  <!-- Theme & RTL Controls -->
+  <div class="mf-auth-toolbar">
+    <button type="button" class="mf-icon-btn" data-mf-theme-toggle aria-label="Switch Theme">
+      <span data-mf-theme-icon><i data-lucide="sun"></i></span>
+    </button>
+    <button type="button" class="mf-icon-btn mf-dir-pill" data-mf-dir-toggle aria-label="Switch RTL/LTR">
+      <i data-lucide="languages" style="width:15px;height:15px;"></i>
+      <span data-mf-dir-label>RTL</span>
+    </button>
+  </div>
+
+  <main class="mf-auth-card" style="max-width:510px;">
+    <div class="text-center mb-4">
+      <a href="index.html" class="mf-brand justify-content-center mb-3" aria-label="Return to MailFlow Home">
+        <span class="mf-brand-mark" aria-hidden="true"><i data-lucide="send" style="width:18px;height:18px;"></i></span>
+        <span>MailFlow</span>
+      </a>
+      <h1 class="h3 mb-1" data-i18n="auth.registerTitle">Create your MailFlow account</h1>
+      <p class="small mb-2" data-i18n="auth.registerSubtitle">Start automating smarter customer journeys in minutes</p>
+      <span class="mf-demo-pill"><i data-lucide="shield-check" style="width:13px;height:13px;"></i> Demo Onboarding · Stored in Browser</span>
+    </div>
+
+    <form id="mf-register-form" class="d-flex flex-column gap-3" novalidate>
+      <div>
+        <label class="mf-label" for="reg-name">Full name</label>
+        <input type="text" class="mf-input" id="reg-name" placeholder="Elena Vance" required>
+        <div class="mf-field-error">Please enter your full name (at least 2 characters).</div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="mf-label" for="reg-email">Business email</label>
+          <input type="email" class="mf-input" id="reg-email" placeholder="elena@company.io" required>
+          <div class="mf-field-error">Enter a valid business email.</div>
+        </div>
+        <div class="col-md-6">
+          <label class="mf-label" for="reg-company">Company name</label>
+          <input type="text" class="mf-input" id="reg-company" placeholder="Northstar Labs" required>
+          <div class="mf-field-error">Please enter your company name.</div>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="mf-label" for="reg-password">Password</label>
+          <div class="mf-password-wrap">
+            <input type="password" class="mf-input" id="reg-password" placeholder="Min 6 characters" required>
+            <button type="button" class="mf-password-toggle" data-toggle-pass="reg-password" aria-label="Show or hide password">
+              <i data-lucide="eye" style="width:18px;height:18px;"></i>
+            </button>
+          </div>
+          <div class="mf-field-error">Minimum 6 characters required.</div>
+        </div>
+        <div class="col-md-6">
+          <label class="mf-label" for="reg-confirm">Confirm password</label>
+          <div class="mf-password-wrap">
+            <input type="password" class="mf-input" id="reg-confirm" placeholder="Repeat password" required>
+            <button type="button" class="mf-password-toggle" data-toggle-pass="reg-confirm" aria-label="Show or hide confirm password">
+              <i data-lucide="eye" style="width:18px;height:18px;"></i>
+            </button>
+          </div>
+          <div class="mf-field-error">Passwords must match.</div>
+        </div>
+      </div>
+
+      <div>
+        <label class="d-flex align-items-start gap-2 small" style="cursor:pointer;color:var(--mf-text-muted);">
+          <input type="checkbox" id="reg-terms" class="form-check-input mt-1" required>
+          <span>I agree to the MailFlow Demo Terms of Service and acknowledge this is a frontend interactive product showcase.</span>
+        </label>
+        <div class="mf-field-error" id="reg-terms-err">You must accept the terms to continue.</div>
+      </div>
+
+      <button type="submit" class="mf-btn mf-btn-primary w-100 mt-1">Create Account</button>
+    </form>
+
+    <p class="text-center small mt-4 mb-0" style="color:var(--mf-text-muted);">
+      Already have an account?
+      <a href="login.html" class="fw-semibold">Sign in</a>
+    </p>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+
+  <script src="js/store.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/theme-rtl.js"></script>
+  <script src="js/ajax-mock.js"></script>
+  <script src="js/three-bg.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
+

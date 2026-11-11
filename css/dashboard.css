@@ -1,0 +1,398 @@
+/* ==========================================================================
+   MailFlow Marketer Dashboard Stylesheet (Logical Properties for Full RTL/LTR)
+   ========================================================================== */
+
+.mf-dash-shell {
+  display: flex;
+  min-height: 100vh;
+  background: var(--mf-bg);
+  position: relative;
+}
+
+/* Sidebar — Uses inset-inline-start so it automatically moves to the right in RTL! */
+.mf-sidebar {
+  position: fixed;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: var(--mf-sidebar-width);
+  background: var(--mf-bg-elevated);
+  border-inline-end: 1px solid var(--mf-border);
+  display: flex;
+  flex-direction: column;
+  z-index: 1045;
+  transition: transform var(--mf-transition), background-color var(--mf-transition);
+}
+
+.mf-sidebar-header {
+  height: var(--mf-nav-height);
+  padding-inline: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--mf-border);
+  flex-shrink: 0;
+}
+
+.mf-sidebar-nav {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 1rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+}
+
+.mf-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.7rem 0.95rem;
+  border-radius: var(--mf-radius-sm);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--mf-text-muted);
+  font-size: 0.92rem;
+  font-weight: 500;
+  text-align: start;
+  cursor: pointer;
+  transition: all var(--mf-transition);
+  text-decoration: none;
+}
+
+.mf-sidebar-link svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.mf-sidebar-link:hover {
+  background: var(--mf-primary-soft);
+  color: var(--mf-text);
+}
+
+.mf-sidebar-link.is-active {
+  background: linear-gradient(135deg, var(--mf-primary) 0%, #6D28D9 100%);
+  color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.3);
+}
+
+.mf-sidebar-footer {
+  padding: 0.85rem;
+  border-top: 1px solid var(--mf-border);
+  flex-shrink: 0;
+}
+
+.mf-sidebar-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 7, 16, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 1042;
+}
+
+/* Main Workspace Area */
+.mf-dash-main {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-inline-start: var(--mf-sidebar-width);
+  padding-top: var(--mf-nav-height);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Mobile Drawer Behavior <= 1024px */
+.mf-dash-drawer-btn,
+.mf-sidebar-close-btn {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .mf-sidebar {
+    transform: translateX(-100%);
+  }
+  [dir="rtl"] .mf-sidebar {
+    transform: translateX(100%);
+  }
+  .mf-sidebar.is-open {
+    transform: translateX(0) !important;
+  }
+  .mf-sidebar-backdrop.is-open {
+    display: block;
+  }
+  .mf-dash-main {
+    margin-inline-start: 0;
+  }
+  .mf-dash-drawer-btn,
+  .mf-sidebar-close-btn {
+    display: inline-flex;
+  }
+}
+
+/* Dashboard Top Navigation (Fixed) */
+.mf-topbar {
+  position: fixed;
+  top: 0;
+  inset-inline-start: var(--mf-sidebar-width);
+  inset-inline-end: 0;
+  z-index: 1030;
+  height: var(--mf-nav-height);
+  padding-inline: 1.5rem;
+  background: var(--mf-surface-glass);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--mf-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+@media (max-width: 1024px) {
+  .mf-topbar {
+    inset-inline-start: 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .mf-topbar {
+    padding-inline: 0.85rem;
+    gap: 0.45rem;
+  }
+  .mf-topbar .mf-icon-btn {
+    width: 36px;
+    height: 36px;
+  }
+  .mf-topbar .mf-dir-pill {
+    padding-inline: 0.45rem;
+  }
+  #mf-dash-breadcrumb {
+    display: none;
+  }
+}
+
+.mf-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.mf-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+}
+
+.mf-topbar-search {
+  position: relative;
+  width: 240px;
+}
+
+.mf-topbar-search .mf-input {
+  padding-block: 0.48rem;
+  padding-inline-start: 2.3rem;
+  font-size: 0.875rem;
+}
+
+.mf-topbar-search-icon {
+  position: absolute;
+  top: 50%;
+  inset-inline-start: 0.75rem;
+  transform: translateY(-50%);
+  color: var(--mf-text-muted);
+  pointer-events: none;
+}
+
+@media (max-width: 767.98px) {
+  .mf-topbar-search {
+    display: none;
+  }
+}
+
+.mf-dash-content {
+  padding: 1.75rem 1.5rem 3rem;
+  width: 100%;
+  max-width: 1560px;
+  margin-inline: auto;
+}
+
+@media (max-width: 575.98px) {
+  .mf-dash-content {
+    padding: 1.15rem 1rem 2.5rem;
+  }
+}
+
+/* KPI Grid */
+.mf-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+@media (max-width: 1199.98px) {
+  .mf-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575.98px) {
+  .mf-kpi-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.mf-kpi-card {
+  padding: 1.35rem;
+}
+
+.mf-kpi-val {
+  font-family: var(--mf-font-display);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--mf-text);
+  line-height: 1.15;
+}
+
+/* Email Builder 3-Pane Workspace */
+.mf-builder-workspace {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr) 290px;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+@media (max-width: 1279.98px) {
+  .mf-builder-workspace {
+    grid-template-columns: 230px minmax(0, 1fr);
+  }
+  .mf-builder-settings-pane {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .mf-builder-workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.mf-builder-block-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--mf-radius-sm);
+  border: 1px solid var(--mf-border);
+  background: var(--mf-bg-elevated);
+  color: var(--mf-text);
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--mf-transition);
+}
+
+.mf-builder-block-btn:hover {
+  border-color: var(--mf-primary);
+  background: var(--mf-primary-soft);
+}
+
+.mf-email-canvas-frame {
+  margin-inline: auto;
+  background: #FFFFFF;
+  color: #211D35;
+  border-radius: var(--mf-radius-md);
+  border: 1px solid var(--mf-border-strong);
+  padding: 1.5rem;
+  transition: max-width var(--mf-transition);
+  box-shadow: var(--mf-shadow-md);
+}
+
+.mf-email-canvas-frame.is-mobile-preview {
+  max-width: 340px;
+}
+
+.mf-canvas-block {
+  position: relative;
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: 2px dashed transparent;
+  cursor: pointer;
+  margin-block-end: 0.65rem;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.mf-canvas-block:hover,
+.mf-canvas-block.is-selected {
+  border-color: #7C3AED;
+  background: rgba(124, 58, 237, 0.04);
+}
+
+.mf-canvas-block-actions {
+  position: absolute;
+  top: 0.35rem;
+  inset-inline-end: 0.35rem;
+  display: none;
+  gap: 0.25rem;
+}
+
+.mf-canvas-block:hover .mf-canvas-block-actions,
+.mf-canvas-block.is-selected .mf-canvas-block-actions {
+  display: inline-flex;
+}
+
+/* Visual Automation Flow Canvas */
+.mf-flow-canvas {
+  background: var(--mf-bg-elevated);
+  border: 1px solid var(--mf-border);
+  border-radius: var(--mf-radius-lg);
+  padding: 2rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.mf-flow-node-card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--mf-surface);
+  border: 1px solid var(--mf-border-strong);
+  border-radius: var(--mf-radius-md);
+  padding: 1.1rem 1.25rem;
+  box-shadow: var(--mf-shadow-sm);
+}
+
+.mf-flow-connector {
+  width: 2px;
+  height: 30px;
+  background: linear-gradient(180deg, var(--mf-primary), var(--mf-secondary));
+  position: relative;
+}
+
+.mf-flow-connector::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid var(--mf-secondary);
+}
+
+.mf-notif-dot {
+  position: absolute;
+  top: 8px;
+  inset-inline-end: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--mf-primary);
+}
+

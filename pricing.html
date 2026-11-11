@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing — MailFlow Email Marketing SaaS</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/public.css">
+</head>
+<body>
+  <canvas id="mf-three-bg" aria-hidden="true"></canvas>
+  <div id="mf-public-navbar-host"></div>
+
+  <main>
+    <!-- Hero + Billing Toggle -->
+    <section class="mf-hero pb-4">
+      <div class="mf-container">
+        <div class="mf-hero-centered">
+          <div class="mf-eyebrow mf-gsap-hero"><i data-lucide="credit-card" style="width:14px;height:14px;"></i> Flexible SaaS Plans</div>
+          <h1 class="mf-hero-title mf-gradient-text mf-gsap-hero" data-i18n="pricing.heroTitle">
+            Transparent Pricing That Scales With Your Audience.
+          </h1>
+          <p class="mf-hero-desc mf-gsap-hero" data-i18n="pricing.heroDesc">
+            Start free with core automation, then unlock higher send limits, A/B testing, and dedicated deliverability as you grow.
+          </p>
+
+          <div class="d-flex flex-column align-items-center gap-2 mf-gsap-hero">
+            <div class="mf-billing-switch" role="group" aria-label="Billing Cycle">
+              <button type="button" class="mf-billing-btn" data-billing="monthly" data-i18n="pricing.monthly">Monthly</button>
+              <button type="button" class="mf-billing-btn is-active" data-billing="yearly" data-i18n="pricing.yearly">Yearly (Save 20%)</button>
+            </div>
+            <span class="mf-demo-pill mt-2"><i data-lucide="info" style="width:13px;height:13px;"></i> Demo Billing Preview — No real payment is charged</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 Equal-Sized Pricing Cards -->
+    <section class="mf-section pt-4">
+      <div class="mf-container">
+        <div class="mf-card-grid mf-card-grid-4">
+          <!-- Free -->
+          <article class="mf-card mf-pricing-card" data-aos="fade-up">
+            <div class="mf-card-body">
+              <span class="mf-badge mf-badge-neutral mb-3" style="width:fit-content;">Free</span>
+              <h2 class="h4 mb-1">Free</h2>
+              <p class="small mb-3">For creators &amp; early launches getting started.</p>
+              <div class="d-flex align-items-baseline gap-1 mb-4">
+                <span class="mf-price-amount" data-price-monthly="0" data-price-yearly="0">$0</span>
+                <span class="small" style="color:var(--mf-text-muted);">/ month</span>
+              </div>
+              <ul class="mf-check-list">
+                <li><i data-lucide="check"></i><span>Up to 1,000 contacts</span></li>
+                <li><i data-lucide="check"></i><span>3,500 monthly emails</span></li>
+                <li><i data-lucide="check"></i><span>Drag-and-drop email builder</span></li>
+                <li><i data-lucide="check"></i><span>1 active automation flow</span></li>
+                <li><i data-lucide="check"></i><span>Core open &amp; click analytics</span></li>
+              </ul>
+            </div>
+            <div class="mf-card-footer">
+              <button type="button" class="mf-btn mf-btn-secondary w-100 mf-select-plan-btn" data-plan="Free" data-price="0">Start Free Demo</button>
+            </div>
+          </article>
+
+          <!-- Starter -->
+          <article class="mf-card mf-pricing-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="mf-card-body">
+              <span class="mf-badge mf-badge-info mb-3" style="width:fit-content;">Starter</span>
+              <h2 class="h4 mb-1">Starter</h2>
+              <p class="small mb-3">For growing newsletters and online stores.</p>
+              <div class="d-flex align-items-baseline gap-1 mb-4">
+                <span class="mf-price-amount" data-price-monthly="29" data-price-yearly="23">$23</span>
+                <span class="small" style="color:var(--mf-text-muted);">/ month</span>
+              </div>
+              <ul class="mf-check-list">
+                <li><i data-lucide="check"></i><span>Up to 10,000 contacts</span></li>
+                <li><i data-lucide="check"></i><span>50,000 monthly emails</span></li>
+                <li><i data-lucide="check"></i><span>5 visual automation workflows</span></li>
+                <li><i data-lucide="check"></i><span>Custom sender domain (DKIM)</span></li>
+                <li><i data-lucide="check"></i><span>Shopify &amp; Stripe integrations</span></li>
+              </ul>
+            </div>
+            <div class="mf-card-footer">
+              <button type="button" class="mf-btn mf-btn-secondary w-100 mf-select-plan-btn" data-plan="Starter" data-price="23">Select Starter</button>
+            </div>
+          </article>
+
+          <!-- Growth (Recommended) -->
+          <article class="mf-card mf-pricing-card is-featured" data-aos="fade-up" data-aos-delay="160">
+            <div class="mf-card-body">
+              <span class="mf-badge mf-badge-primary mb-3" style="width:fit-content;" data-i18n="pricing.recommended">Recommended</span>
+              <h2 class="h4 mb-1">Growth</h2>
+              <p class="small mb-3">For SaaS &amp; ecommerce lifecycle marketing teams.</p>
+              <div class="d-flex align-items-baseline gap-1 mb-4">
+                <span class="mf-price-amount" data-price-monthly="79" data-price-yearly="63">$63</span>
+                <span class="small" style="color:var(--mf-text-muted);">/ month</span>
+              </div>
+              <ul class="mf-check-list">
+                <li><i data-lucide="check"></i><span>Up to 50,000 contacts</span></li>
+                <li><i data-lucide="check"></i><span>400,000 monthly emails</span></li>
+                <li><i data-lucide="check"></i><span>Unlimited automation workflows</span></li>
+                <li><i data-lucide="check"></i><span>A/B subject &amp; send-time testing</span></li>
+                <li><i data-lucide="check"></i><span>Predictive segments &amp; CRM sync</span></li>
+              </ul>
+            </div>
+            <div class="mf-card-footer">
+              <button type="button" class="mf-btn mf-btn-primary w-100 mf-select-plan-btn" data-plan="Growth" data-price="63">Start Growth Trial</button>
+            </div>
+          </article>
+
+          <!-- Enterprise -->
+          <article class="mf-card mf-pricing-card" data-aos="fade-up" data-aos-delay="240">
+            <div class="mf-card-body">
+              <span class="mf-badge mf-badge-success mb-3" style="width:fit-content;">Scale</span>
+              <h2 class="h4 mb-1">Enterprise</h2>
+              <p class="small mb-3">For high-volume senders needing dedicated IPs.</p>
+              <div class="d-flex align-items-baseline gap-1 mb-4">
+                <span class="mf-price-amount" data-price-monthly="249" data-price-yearly="199">$199</span>
+                <span class="small" style="color:var(--mf-text-muted);">/ month</span>
+              </div>
+              <ul class="mf-check-list">
+                <li><i data-lucide="check"></i><span>250,000+ custom contacts</span></li>
+                <li><i data-lucide="check"></i><span>Unlimited monthly sends</span></li>
+                <li><i data-lucide="check"></i><span>Dedicated IP &amp; warming concierge</span></li>
+                <li><i data-lucide="check"></i><span>SAML SSO &amp; SOC 2 compliance</span></li>
+                <li><i data-lucide="check"></i><span>24/7 deliverability engineer</span></li>
+              </ul>
+            </div>
+            <div class="mf-card-footer">
+              <button type="button" class="mf-btn mf-btn-secondary w-100 mf-select-plan-btn" data-plan="Enterprise" data-price="199">Contact Enterprise Sales</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Comparison Table -->
+    <section class="mf-section pt-2">
+      <div class="mf-container">
+        <div class="mf-section-header" data-aos="fade-up">
+          <h2 class="mf-section-title">Compare Every Feature Side by Side</h2>
+          <p class="mf-section-desc">Clear limits and capabilities across all four MailFlow tiers.</p>
+        </div>
+
+        <div class="mf-table-wrap" data-aos="fade-up">
+          <table class="mf-table">
+            <thead>
+              <tr>
+                <th>Capability</th>
+                <th>Free</th>
+                <th>Starter</th>
+                <th>Growth</th>
+                <th>Enterprise</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Contact Limit</strong></td>
+                <td>1,000</td>
+                <td>10,000</td>
+                <td>50,000</td>
+                <td>250,000+</td>
+              </tr>
+              <tr>
+                <td><strong>Monthly Email Volume</strong></td>
+                <td>3,500</td>
+                <td>50,000</td>
+                <td>400,000</td>
+                <td>Custom / Unlimited</td>
+              </tr>
+              <tr>
+                <td><strong>Visual Automation Workflows</strong></td>
+                <td>1 active flow</td>
+                <td>5 active flows</td>
+                <td>Unlimited</td>
+                <td>Unlimited + Priority Queue</td>
+              </tr>
+              <tr>
+                <td><strong>Drag-and-Drop Email Builder</strong></td>
+                <td>Included</td>
+                <td>Included</td>
+                <td>Included + Saved Blocks</td>
+                <td>Included + Team Locking</td>
+              </tr>
+              <tr>
+                <td><strong>A/B Subject &amp; Send-Time Optimization</strong></td>
+                <td>—</td>
+                <td>Subject A/B</td>
+                <td>Full Multivariate</td>
+                <td>Full Multivariate + AI</td>
+              </tr>
+              <tr>
+                <td><strong>Dedicated IP &amp; SAML SSO</strong></td>
+                <td>—</td>
+                <td>—</td>
+                <td>Optional Add-on</td>
+                <td>Included</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing FAQ -->
+    <section class="mf-section pt-2" id="faq">
+      <div class="mf-container">
+        <div class="mf-section-header" data-aos="fade-up">
+          <h2 class="mf-section-title">Pricing &amp; Billing FAQ</h2>
+        </div>
+        <div class="mf-faq-list" data-aos="fade-up">
+          <div class="mf-faq-item is-open">
+            <button type="button" class="mf-faq-trigger" aria-expanded="true">
+              <span>How much do I save with yearly billing?</span>
+              <i data-lucide="chevron-down" class="mf-faq-chevron"></i>
+            </button>
+            <div class="mf-faq-panel">
+              Annual billing saves 20% compared to month-to-month pricing across Starter, Growth, and Enterprise tiers.
+            </div>
+          </div>
+          <div class="mf-faq-item">
+            <button type="button" class="mf-faq-trigger" aria-expanded="false">
+              <span>What happens when I click a plan selection button?</span>
+              <i data-lucide="chevron-down" class="mf-faq-chevron"></i>
+            </button>
+            <div class="mf-faq-panel">
+              In this frontend demo, selecting any plan opens a confirmation modal that saves your selected demo plan to localStorage and lets you launch the Marketer Dashboard immediately without charging a card.
+            </div>
+          </div>
+          <div class="mf-faq-item">
+            <button type="button" class="mf-faq-trigger" aria-expanded="false">
+              <span>Are unsubscribed contacts counted toward my contact tier?</span>
+              <i data-lucide="chevron-down" class="mf-faq-chevron"></i>
+            </button>
+            <div class="mf-faq-panel">
+              No. MailFlow only bills for active marketable contacts so compliance suppression lists never inflate your plan.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Sales Section -->
+    <section class="mf-section pt-2" id="contact-sales">
+      <div class="mf-container">
+        <div class="mf-card p-4 p-lg-5" data-aos="fade-up">
+          <div class="mf-split-panel">
+            <div>
+              <div class="mf-eyebrow"><i data-lucide="headphones" style="width:14px;height:14px;"></i> Enterprise Advisory</div>
+              <h2 class="h3">Need Custom Sending Volume or Dedicated IP Warming?</h2>
+              <p>Talk with our deliverability specialists about multi-brand workspaces, custom SLAs, and migration assistance from Mailchimp, Klaviyo, or Brevo.</p>
+              <span class="mf-demo-pill"><i data-lucide="shield" style="width:13px;height:13px;"></i> Demo Inquiry Form (AJAX Simulation)</span>
+            </div>
+            <form id="mf-contact-sales-form" class="d-flex flex-column gap-3" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="mf-label" for="sales-name">Full Name</label>
+                  <input type="text" class="mf-input" id="sales-name" placeholder="Elena Vance" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="mf-label" for="sales-email">Work Email</label>
+                  <input type="email" class="mf-input" id="sales-email" placeholder="elena@company.com" required>
+                </div>
+              </div>
+              <div>
+                <label class="mf-label" for="sales-volume">Monthly Email Volume</label>
+                <select class="mf-select" id="sales-volume">
+                  <option value="250k-1m">250,000 – 1,000,000 emails / mo</option>
+                  <option value="1m-5m">1,000,000 – 5,000,000 emails / mo</option>
+                  <option value="5m+">5,000,000+ emails / mo</option>
+                </select>
+              </div>
+              <button type="submit" class="mf-btn mf-btn-primary">Request Custom Quote</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Plan Selection Modal -->
+  <div class="modal fade" id="mfPlanModal" tabindex="-1" aria-labelledby="mfPlanModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="mfPlanModalLabel">Confirm Demo Plan Selection</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="mb-3" id="mf-plan-modal-summary"></p>
+          <div class="p-3 rounded-3 small" style="background:var(--mf-bg-elevated);border:1px solid var(--mf-border);color:var(--mf-text-muted);">
+            <strong>Demo Notice:</strong> No live payment processor is connected. Activating this plan updates your browser demo workspace immediately.
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="mf-btn mf-btn-ghost mf-btn-sm" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="mf-btn mf-btn-primary mf-btn-sm" id="mf-confirm-plan-btn">Activate Demo Workspace</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="mf-public-footer-host"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+
+  <script src="js/store.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/theme-rtl.js"></script>
+  <script src="js/ajax-mock.js"></script>
+  <script src="js/three-bg.js"></script>
+  <script src="js/public-nav.js"></script>
+  <script src="js/pricing.js"></script>
+</body>
+</html>
+

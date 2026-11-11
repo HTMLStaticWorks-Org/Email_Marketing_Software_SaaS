@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MailFlow — Every Email. Smarter Connections.</title>
+  <meta name="description" content="MailFlow is a modern email marketing & lifecycle automation SaaS platform for high-growth teams.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS CDNs -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- MailFlow CSS -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/public.css">
+</head>
+<body>
+  <canvas id="mf-three-bg" aria-hidden="true"></canvas>
+
+  <!-- 1. Premium Navigation Bar -->
+  <div id="mf-public-navbar-host"></div>
+
+  <main>
+    <!-- 2, 3, 4, 5. Hero + Supporting Description + Dual CTAs + Large Interactive Dashboard Preview -->
+    <section class="mf-hero">
+      <div class="mf-container">
+        <div class="mf-hero-centered">
+          <div class="mf-eyebrow mf-gsap-hero">
+            <i data-lucide="sparkles" style="width:15px;height:15px;"></i>
+            <span data-i18n="hero.eyebrow">2026 Email Marketing &amp; Lifecycle Automation</span>
+          </div>
+          <h1 class="mf-hero-title mf-gradient-text mf-gsap-hero" data-i18n="hero.title">
+            Turn Every Email Into an Opportunity.
+          </h1>
+          <p class="mf-hero-desc mf-gsap-hero" data-i18n="hero.desc">
+            Design high-converting campaigns, automate visual customer journeys, and track real-time revenue attribution inside one unified workspace built for modern SaaS and ecommerce teams.
+          </p>
+          <div class="mf-hero-actions mf-gsap-hero">
+            <a href="register.html" class="mf-btn mf-btn-primary mf-btn-lg">
+              <span data-i18n="hero.ctaPrimary">Get Started Free</span>
+              <i data-lucide="arrow-right" class="mf-rtl-flip"></i>
+            </a>
+            <a href="features.html" class="mf-btn mf-btn-secondary mf-btn-lg">
+              <i data-lucide="layers"></i>
+              <span data-i18n="hero.ctaSecondary">Explore Features</span>
+            </a>
+            <a href="dashboard.html" class="mf-btn mf-btn-ghost mf-btn-lg">
+              <i data-lucide="layout-dashboard"></i>
+              <span>Live Marketer Demo</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 5. Large Interactive Email Marketing Dashboard Preview -->
+        <div class="mf-preview-shell mf-gsap-hero">
+          <div class="mf-preview-chrome">
+            <div class="d-flex align-items-center gap-3">
+              <div class="mf-window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+              <span class="small fw-semibold" style="color:var(--mf-text-muted);">app.mailflow.io/dashboard</span>
+            </div>
+            <div class="mf-preview-tabs" role="tablist" aria-label="Dashboard Preview Views">
+              <button type="button" class="mf-preview-tab is-active" data-preview-tab="overview">Campaign Pulse</button>
+              <button type="button" class="mf-preview-tab" data-preview-tab="automation">Automation Flow</button>
+              <button type="button" class="mf-preview-tab" data-preview-tab="deliverability">Deliverability</button>
+            </div>
+          </div>
+
+          <div class="mf-preview-body">
+            <div class="mf-preview-grid">
+              <aside class="mf-preview-sidebar" aria-label="Preview Navigation">
+                <div class="mf-preview-nav-item is-active" data-preview-side="overview">
+                  <i data-lucide="bar-chart-2" style="width:16px;height:16px;"></i> Overview
+                </div>
+                <div class="mf-preview-nav-item" data-preview-side="automation">
+                  <i data-lucide="git-branch" style="width:16px;height:16px;"></i> Workflows (12)
+                </div>
+                <div class="mf-preview-nav-item" data-preview-side="deliverability">
+                  <i data-lucide="shield-check" style="width:16px;height:16px;"></i> Inbox Health
+                </div>
+                <div class="mt-auto pt-3 border-top" style="border-color:var(--mf-border) !important;">
+                  <div class="small" style="color:var(--mf-text-muted);">Monthly Volume</div>
+                  <div class="fw-bold" style="color:var(--mf-text);">142,800 / 250k</div>
+                </div>
+              </aside>
+
+              <div id="mf-hero-preview-stage">
+                <!-- Hydrated dynamically by js/home.js -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Animated Campaign Statistics -->
+    <section class="mf-section pt-3">
+      <div class="mf-container">
+        <div class="mf-section-header" data-aos="fade-up">
+          <div class="mf-eyebrow"><i data-lucide="activity" style="width:14px;height:14px;"></i> Platform Benchmarks</div>
+          <h2 class="mf-section-title" data-i18n="home.statsTitle">Proven Deliverability at SaaS Scale</h2>
+          <p class="mf-section-desc">Real-world speed, inbox placement, and subscriber engagement engineered into every send.</p>
+        </div>
+
+        <div class="mf-card-grid mf-card-grid-4" id="mf-home-counters">
+          <div class="mf-card mf-stat-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="mf-stat-number"><span class="mf-counter" data-target="99.4" data-decimals="1">0</span>%</div>
+            <h3 class="h6 mb-1">Inbox Placement</h3>
+            <p class="small mb-0">Verified DKIM, SPF &amp; DMARC guardrails across global ISPs.</p>
+          </div>
+          <div class="mf-card mf-stat-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="mf-stat-number"><span class="mf-counter" data-target="48.6" data-decimals="1">0</span>%</div>
+            <h3 class="h6 mb-1">Avg. Open Rate</h3>
+            <p class="small mb-0">Boosted by predictive send-time and smart subject testing.</p>
+          </div>
+          <div class="mf-card mf-stat-card" data-aos="fade-up" data-aos-delay="160">
+            <div class="mf-stat-number"><span class="mf-counter" data-target="3.8" data-decimals="1">0</span>x</div>
+            <h3 class="h6 mb-1">Lifecycle ROI</h3>
+            <p class="small mb-0">Automated triggers outperform batch blasts across SaaS cohorts.</p>
+          </div>
+          <div class="mf-card mf-stat-card" data-aos="fade-up" data-aos-delay="240">
+            <div class="mf-stat-number"><span class="mf-counter" data-target="180" data-decimals="0">0</span>ms</div>
+            <h3 class="h6 mb-1">Event Trigger Latency</h3>
+            <p class="small mb-0">Instant webhook-to-email dispatch for signup &amp; checkout events.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Email Automation Workflow Visualization -->
+    <section class="mf-section">
+      <div class="mf-container">
+        <div class="mf-section-header" data-aos="fade-up">
+          <div class="mf-eyebrow"><i data-lucide="workflow" style="width:14px;height:14px;"></i> Visual Flow Engine</div>
+          <h2 class="mf-section-title" data-i18n="home.workflowTitle">Visual Automation That Works While You Sleep</h2>
+          <p class="mf-section-desc">Click any node below to inspect how triggers, behavioral splits, and timed actions orchestrate every subscriber journey.</p>
+        </div>
+
+        <div class="mf-workflow-stage" data-aos="fade-up">
+          <div class="mf-workflow-track" id="mf-home-workflow-nodes">
+            <button type="button" class="mf-wf-node is-selected" data-wf-step="0">
+              <span class="mf-badge mf-badge-primary mb-2" style="width:fit-content;">Trigger</span>
+              <h3 class="h6 mb-1">Trial Signup Event</h3>
+              <p class="small mb-0">Fires instantly when a new workspace is created via app or Webflow.</p>
+            </button>
+            <button type="button" class="mf-wf-node" data-wf-step="1">
+              <span class="mf-badge mf-badge-info mb-2" style="width:fit-content;">Action</span>
+              <h3 class="h6 mb-1">Send Warm Welcome</h3>
+              <p class="small mb-0">Delivers personalized onboarding checklist with sender domain guide.</p>
+            </button>
+            <button type="button" class="mf-wf-node" data-wf-step="2">
+              <span class="mf-badge mf-badge-warning mb-2" style="width:fit-content;">Condition</span>
+              <h3 class="h6 mb-1">Wait 48h · First Send?</h3>
+              <p class="small mb-0">Checks if contact launched a campaign; branches VIP vs Nudge path.</p>
+            </button>
+            <button type="button" class="mf-wf-node" data-wf-step="3">
+              <span class="mf-badge mf-badge-success mb-2" style="width:fit-content;">Conversion</span>
+              <h3 class="h6 mb-1">Upgrade &amp; Tag VIP</h3>
+              <p class="small mb-0">Applies Growth Cohort tag and syncs attribution to HubSpot &amp; Stripe.</p>
+            </button>
+          </div>
+          <div class="mt-4 p-3 rounded-3 d-flex flex-wrap align-items-center justify-content-between gap-3" style="background:var(--mf-bg-elevated);border:1px solid var(--mf-border);">
+            <div id="mf-home-wf-inspector" class="small" style="color:var(--mf-text);">
+              <strong>Selected Node:</strong> Trial Signup Event — Latency &lt; 180ms · 4,280 contacts enrolled this month.
+            </div>
+            <a href="dashboard.html#automation" class="mf-btn mf-btn-primary mf-btn-sm">Open Automation Studio</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Features Overview -->
+    <section class="mf-section">
+      <div class="mf-container">
+        <div class="mf-section-header" data-aos="fade-up">
+          <div class="mf-eyebrow"><i data-lucide="cpu" style="width:14px;height:14px;"></i> Core Capabilities</div>
+          <h2 class="mf-section-title" data-i18n="home.featuresTitle">Everything Marketers Need to Grow Faster</h2>
+          <p class="mf-section-desc">Purpose-built tools designed with the visual clarity of modern developer platforms and full marketer power.</p>
+        </div>
+
+        <div class="mf-card-grid mf-card-grid-3">
+          <article class="mf-card mf-card-interactive" data-aos="fade-up">
+            <div class="mf-card-icon"><i data-lucide="layout-template"></i></div>
+            <div class="mf-card-body">
+              <h3 class="h5">Drag-and-Drop Builder</h3>
+              <p class="mb-0">Compose responsive emails using heading, media, button, and social blocks with instant desktop &amp; mobile previews.</p>
+            </div>
+            <div class="mf-card-footer">
+              <a href="dashboard.html#builder" class="mf-btn mf-btn-ghost mf-btn-sm w-100">Launch Builder</a>
+            </div>
+          </article>
+
+          <article class="mf-card mf-card-interactive" data-aos="fade-up" data-aos-delay="80">
+            <div class="mf-card-icon"><i data-lucide="filter"></i></div>
+            <div class="mf-card-body">
+              <h3 class="h5">Dynamic Segmentation</h3>
+              <p class="mb-0">Group subscribers by engagement score, geography, purchase behavior, and custom tags in real time.</p>
+            </div>
+            <div class="mf-card-footer">
+              <a href="dashboard.html#segments" class="mf-btn mf-btn-ghost mf-btn-sm w-100">Explore Segments</a>
+            </div>
+          </article>
+
+          <article class="mf-card mf-card-interactive" data-aos="fade-up" data-aos-delay="160">
+            <div class="mf-card-icon"><i data-lucide="split"></i></div>
+            <div class="mf-card-body">
+              <h3 class="h5">A/B Subject Testing</h3>
+              <p class="mb-0">Automatically test subject lines and send windows on 15% of your audience before rolling out the winner.</p>
+            </div>
+            <div class="mf-card-footer">
+              <a href="features.html#ab-testing" class="mf-btn mf-btn-ghost mf-btn-sm w-100">See How It Works</a>
+            </div>
+          </article>
+
+          <article class="mf-card mf-card-interactive" data-aos="fade-up">
+            <div class="mf-card-icon"><i data-lucide="calendar-clock"></i></div>
+            <div class="mf-card-body">
+              <h3 class="h5">Smart Campaign Scheduling</h3>
+              <p class="mb-0">Deliver emails when each recipient is most likely to open, across global timezones without overlap.</p>
+            </div>
+            <div class="mf-card-footer">
+              <a href="dashboard.html#campaigns" class="mf-btn mf-btn-ghost mf-btn-sm w-100">Manage Campaigns</a>
+            </div>
+          </article>
+
+          <article class="mf-card mf-card-interactive" data-aos="fade-up" data-aos-delay="80">
+            <div class="mf-card-icon"><i data-lucide="line-chart"></i></div>
+            <div class="mf-card-body">
+              <h3 class="h5">Real-Time Analytics</h3>
+              <p class="mb-0">Monitor opens, CTR, bounce rates, and unsubscribes in live interactive charts across customizable date ranges.</p>
+            </div>
+            <div class="mf-card-footer">
+              <a href="dashboard.html#analytics" class="mf-btn mf-btn-ghost mf-btn-sm w-100">View Analytics</a>
+            </div>
+          </article>
+
+          <article class="mf-card mf-card-interactive" data-aos="fade-up" data-aos-delay="160">
+            <div class="mf-card-icon"><i data-lucide="languages"></i></div>
+            <div class="mf-card-body">
+              <h3 class="h5">Global LTR &amp; RTL Ready</h3>
+              <p class="mb-0">Full bidirectional layout support for English and Arabic marketing teams and multilingual subscriber bases.</p>
+            </div>
+            <div class="mf-card-footer">
+              <button type="button" class="mf-btn mf-btn-ghost mf-btn-sm w-100" data-mf-dir-toggle>Toggle RTL Preview</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. How MailFlow Works -->
+    <section class="mf-section">
+      <div class="mf-container">
+        <div class="mf-section-header" data-aos="fade-up">
+          <div class="mf-eyebrow"><i data-lucide="compass" style="width:14px;height:14px;"></i> 3-Step Launch</div>
+          <h2 class="mf-section-title" data-i18n="home.howTitle">How MailFlow Works</h2>
+          <p class="mf-section-desc">Go from imported CSV or live storefront sync to automated revenue in minutes.</p>
+        </div>
+
+        <div class="mf-card-grid mf-card-grid-3">
+          <div class="mf-card text-center" data-aos="fade-up">
+            <div class="mf-step-badge">1</div>
+            <div class="mf-card-img-wrap">
+              <img src="assets/img/a%20(1).jpg" alt="Marketing team segmenting audience contacts" loading="eager">
+            </div>
+            <div class="mf-card-body">
+              <h3 class="h5">Connect &amp; Segment Audience</h3>
+              <p class="mb-0">Import contacts via CSV or sync Shopify, Stripe, and HubSpot in one click with automatic deduplication.</p>
+            </div>
+          </div>
+
+          <div class="mf-card text-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="mf-step-badge">2</div>
+            <div class="mf-card-img-wrap">
+              <img src="assets/img/a%20(7).jpg" alt="Designing responsive email campaigns on laptop" loading="eager">
+            </div>
+            <div class="mf-card-body">
+              <h3 class="h5">Craft Emails &amp; Visual Flows</h3>
+              <p class="mb-0">Customize curated templates in the drag-and-drop studio and connect behavioral triggers visually.</p>
+            </div>
+          </div>
+
+          <div class="mf-card text-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="mf-step-badge">3</div>
+            <div class="mf-card-img-wrap">
+              <img src="assets/img/a%20(18).jpg" alt="Real-time email analytics and conversion tracking" loading="eager">
+            </div>
+            <div class="mf-card-body">
+              <h3 class="h5">Measure &amp; Optimize Lift</h3>
+              <p class="mb-0">Track open-to-click conversions, A/B winners, and subscriber cohort health from one crisp dashboard.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Audience Management Showcase -->
+    <section class="mf-section">
+      <div class="mf-container">
+        <div class="mf-card p-4 p-lg-5" data-aos="fade-up">
+          <div class="mf-split-panel">
+            <div>
+              <div class="mf-eyebrow"><i data-lucide="users" style="width:14px;height:14px;"></i> Audience Intelligence</div>
+              <h2 class="mf-section-title" data-i18n="home.audienceTitle">Precision Audience Management</h2>
+              <p>Keep every contact profile enriched with lifecycle tags, engagement scores, location filters, and subscription audit logs. Never blast an unengaged list again.</p>
+              <ul class="mf-check-list mb-4">
+                <li><i data-lucide="check-circle-2"></i><span>Instant CSV parser &amp; bulk audience group tagging</span></li>
+                <li><i data-lucide="check-circle-2"></i><span>Live segment counts computed directly from subscriber activity</span></li>
+                <li><i data-lucide="check-circle-2"></i><span>Automated sunset rules to protect domain sender reputation</span></li>
+              </ul>
+              <a href="dashboard.html#contacts" class="mf-btn mf-btn-primary">Explore Contact Studio</a>
+            </div>
+            <div class="mf-media-frame">
+              <img src="assets/img/a%20(12).jpg" alt="Marketing strategists reviewing audience segments" loading="eager">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Campaign Performance Visualization -->
+    <section class="mf-section">
+      <div class="mf-container">
+        <div class="mf-section-header" data-aos="fade-up">
+          <div class="mf-eyebrow"><i data-lucide="trending-up" style="width:14px;height:14px;"></i> Live Telemetry</div>
+          <h2 class="mf-section-title" data-i18n="home.perfTitle">Real-Time Campaign Performance</h2>
+          <p class="mf-section-desc">Interactive open rate vs click-through rate trajectories across your recent lifecycle campaigns.</p>
+        </div>
+
+        <div class="mf-card p-4" data-aos="fade-up">
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-3">
+            <div>
+              <h3 class="h5 mb-1">Open Rate vs. Click-Through Rate</h3>
+              <p class="small mb-0">Sample 6-month trajectory across SaaS &amp; Ecommerce cohorts</p>
+            </div>
+            <a href="dashboard.html#analytics" class="mf-btn mf-btn-secondary mf-btn-sm">Full Analytics Suite</a>
+          </div>
+          <div style="position:relative;height:320px;width:100%;">
+            <canvas id="mf-home-perf-chart"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. Integrations Showcase -->
+    <section class="mf-section">
+      <div class="mf-container">
+        <div class="mf-section-header" data-aos="fade-up">
+          <div class="mf-eyebrow"><i data-lucide="plug" style="width:14px;height:14px;"></i> Connected Ecosystem</div>
+          <h2 class="mf-section-title" data-i18n="home.integrationsTitle">Connects Seamlessly With Your Stack</h2>
+          <p class="mf-section-desc">Sync customer purchases, CRM deal stages, and product events in under two minutes.</p>
+        </div>
+
+        <div class="mf-card-grid mf-card-grid-4">
+          <div class="mf-integration-card" data-aos="fade-up">
+            <div class="mf-card-icon"><i data-lucide="shopping-bag"></i></div>
+            <h3 class="h6 mb-1">Shopify</h3>
+            <p class="small mb-0">Cart recovery &amp; VIP order triggers</p>
+          </div>
+          <div class="mf-integration-card" data-aos="fade-up" data-aos-delay="60">
+            <div class="mf-card-icon"><i data-lucide="credit-card"></i></div>
+            <h3 class="h6 mb-1">Stripe</h3>
+            <p class="small mb-0">Dunning &amp; subscription renewals</p>
+          </div>
+          <div class="mf-integration-card" data-aos="fade-up" data-aos-delay="120">
+            <div class="mf-card-icon"><i data-lucide="users"></i></div>
+            <h3 class="h6 mb-1">HubSpot CRM</h3>
+            <p class="small mb-0">Two-way contact &amp; deal sync</p>
+          </div>
+          <div class="mf-integration-card" data-aos="fade-up" data-aos-delay="180">
+            <div class="mf-card-icon"><i data-lucide="zap"></i></div>
+            <h3 class="h6 mb-1">Zapier &amp; Webhooks</h3>
+            <p class="small mb-0">6,000+ custom workflow hooks</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. Customer Testimonials (Swiper.js) -->
+    <section class="mf-section">
+      <div class="mf-container">
+        <div class="mf-section-header" data-aos="fade-up">
+          <div class="mf-eyebrow"><i data-lucide="message-square-quote" style="width:14px;height:14px;"></i> Customer Stories</div>
+          <h2 class="mf-section-title" data-i18n="home.testimonialsTitle">Loved by High-Growth Marketing Teams</h2>
+          <p class="mf-section-desc">How SaaS founders and ecommerce lifecycle leads scale engagement with MailFlow.</p>
+        </div>
+
+        <div class="swiper" id="mf-testimonials-swiper" data-aos="fade-up">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <article class="mf-card mf-testimonial-card">
+                <div class="mf-card-body">
+                  <div class="mf-badge mf-badge-success mb-3" style="width:fit-content;">+41% Trial Conversion</div>
+                  <p>“Switching our onboarding sequences to MailFlow lifted week-one activation by 41%. The visual flow builder makes branching effortless.”</p>
+                </div>
+                <div class="mf-card-footer d-flex align-items-center gap-3">
+                  <img src="https://randomuser.me/api/portraits/women/88.jpg" alt="Elena Vance portrait" class="mf-avatar" loading="eager">
+                  <div>
+                    <div class="fw-bold small">Elena Vance</div>
+                    <div class="small" style="color:var(--mf-text-muted);">Head of Growth, Northstar Labs</div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="swiper-slide">
+              <article class="mf-card mf-testimonial-card">
+                <div class="mf-card-body">
+                  <div class="mf-badge mf-badge-primary mb-3" style="width:fit-content;">99.5% Deliverability</div>
+                  <p>“Our transactional and promotional emails finally live in one clean workspace. Native RTL support let us launch our Arabic storefront in days.”</p>
+                </div>
+                <div class="mf-card-footer d-flex align-items-center gap-3">
+                  <img src="https://randomuser.me/api/portraits/men/18.jpg" alt="Marcus Chen portrait" class="mf-avatar" loading="eager">
+                  <div>
+                    <div class="fw-bold small">Marcus Chen</div>
+                    <div class="small" style="color:var(--mf-text-muted);">VP Lifecycle, Verve Commerce</div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="swiper-slide">
+              <article class="mf-card mf-testimonial-card">
+                <div class="mf-card-body">
+                  <div class="mf-badge mf-badge-info mb-3" style="width:fit-content;">3.4x Flow Revenue</div>
+                  <p>“MailFlow replaced three legacy tools for us. Segmentation updates in real time and the email builder produces crisp dark-mode emails every time.”</p>
+                </div>
+                <div class="mf-card-footer d-flex align-items-center gap-3">
+                  <img src="https://randomuser.me/api/portraits/women/0.jpg" alt="Sofia Lindqvist portrait" class="mf-avatar" loading="eager">
+                  <div>
+                    <div class="fw-bold small">Sofia Lindqvist</div>
+                    <div class="small" style="color:var(--mf-text-muted);">CMO, NordicPay</div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="swiper-slide">
+              <article class="mf-card mf-testimonial-card">
+                <div class="mf-card-body">
+                  <div class="mf-badge mf-badge-warning mb-3" style="width:fit-content;">2h Setup Time</div>
+                  <p>“Importing 50,000 contacts and wiring our Shopify cart recovery trigger took one afternoon. Our team loves the clean analytics breakdown.”</p>
+                </div>
+                <div class="mf-card-footer d-flex align-items-center gap-3">
+                  <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Victor Brown portrait" class="mf-avatar" loading="eager">
+                  <div>
+                    <div class="fw-bold small">Victor Brown</div>
+                    <div class="small" style="color:var(--mf-text-muted);">Founder, Kinetix Cloud</div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="swiper-pagination mt-4 position-relative"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. Frequently Asked Questions -->
+    <section class="mf-section">
+      <div class="mf-container">
+        <div class="mf-section-header" data-aos="fade-up">
+          <div class="mf-eyebrow"><i data-lucide="help-circle" style="width:14px;height:14px;"></i> Answers</div>
+          <h2 class="mf-section-title" data-i18n="home.faqTitle">Frequently Asked Questions</h2>
+          <p class="mf-section-desc">Everything you need to know about MailFlow’s plans, deliverability, and interactive demo.</p>
+        </div>
+
+        <div class="mf-faq-list" data-aos="fade-up">
+          <div class="mf-faq-item is-open">
+            <button type="button" class="mf-faq-trigger" aria-expanded="true">
+              <span>What can I test inside this MailFlow Marketer Dashboard demo?</span>
+              <i data-lucide="chevron-down" class="mf-faq-chevron"></i>
+            </button>
+            <div class="mf-faq-panel">
+              You can create and schedule campaigns, build emails in the drag-and-drop editor, import CSV contacts, configure dynamic segments, inspect visual automation workflows, and toggle Light/Dark or RTL/LTR modes with full localStorage persistence.
+            </div>
+          </div>
+          <div class="mf-faq-item">
+            <button type="button" class="mf-faq-trigger" aria-expanded="false">
+              <span>Does MailFlow send real live emails or process real payments in demo mode?</span>
+              <i data-lucide="chevron-down" class="mf-faq-chevron"></i>
+            </button>
+            <div class="mf-faq-panel">
+              No. All email sends, test dispatches, authentication flows, and plan checkouts in this frontend showcase operate as simulated AJAX actions stored in your browser so you can safely explore every workflow without external side effects.
+            </div>
+          </div>
+          <div class="mf-faq-item">
+            <button type="button" class="mf-faq-trigger" aria-expanded="false">
+              <span>How does RTL and Arabic support work across the website?</span>
+              <i data-lucide="chevron-down" class="mf-faq-chevron"></i>
+            </button>
+            <div class="mf-faq-panel">
+              Clicking the RTL/LTR toggle switches the document direction, translates key UI copy, flips directional icons, moves the dashboard sidebar to the right edge, and persists your preference across every page.
+            </div>
+          </div>
+          <div class="mf-faq-item">
+            <button type="button" class="mf-faq-trigger" aria-expanded="false">
+              <span>Can I switch between Free, Starter, Growth, and Enterprise anytime?</span>
+              <i data-lucide="chevron-down" class="mf-faq-chevron"></i>
+            </button>
+            <div class="mf-faq-panel">
+              Yes! Visit the Pricing page to compare monthly vs. yearly billing (with 20% annual savings) and test instant plan selection or custom enterprise inquiries.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15. Final CTA Section -->
+    <section class="mf-section pt-2">
+      <div class="mf-container">
+        <div class="mf-cta-banner" data-aos="zoom-in">
+          <div class="mf-eyebrow mb-3"><i data-lucide="rocket" style="width:14px;height:14px;"></i> Launch Today</div>
+          <h2 class="mf-section-title" data-i18n="home.ctaTitle">Ready to Build Smarter Email Connections?</h2>
+          <p class="mf-section-desc mx-auto mb-4" style="max-width:600px;" data-i18n="home.ctaDesc">
+            Launch your first automated workflow in under five minutes. Demo workspace included — no credit card required.
+          </p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="register.html" class="mf-btn mf-btn-primary mf-btn-lg">
+              <span>Create Free Account</span>
+              <i data-lucide="arrow-right" class="mf-rtl-flip"></i>
+            </a>
+            <a href="dashboard.html" class="mf-btn mf-btn-secondary mf-btn-lg">
+              <span>Explore Marketer Dashboard</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 16. Professional Footer -->
+  <div id="mf-public-footer-host"></div>
+
+  <!-- Vendor Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+
+  <!-- MailFlow Core & Page Script -->
+  <script src="js/store.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/theme-rtl.js"></script>
+  <script src="js/ajax-mock.js"></script>
+  <script src="js/three-bg.js"></script>
+  <script src="js/public-nav.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
+

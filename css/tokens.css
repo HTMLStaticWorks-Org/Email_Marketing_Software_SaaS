@@ -1,0 +1,92 @@
+/* ==========================================================================
+   MailFlow Design System Tokens — Midnight SaaS × Electric Violet
+   ========================================================================== */
+
+:root {
+  /* Fonts */
+  --mf-font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  --mf-font-display: 'Space Grotesk', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --mf-font-arabic: 'Cairo', 'Tajawal', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --mf-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  /* Dark Mode Palette (Default) */
+  --mf-bg: #11101C;
+  --mf-bg-elevated: #181529;
+  --mf-surface: #211D35;
+  --mf-surface-hover: #292442;
+  --mf-surface-glass: rgba(33, 29, 53, 0.72);
+  --mf-primary: #8B5CF6;
+  --mf-primary-hover: #9F7AEA;
+  --mf-primary-soft: rgba(139, 92, 246, 0.16);
+  --mf-secondary: #C4B5FD;
+  --mf-text: #F8F7FC;
+  --mf-text-muted: #A6A1B5;
+  --mf-border: rgba(196, 181, 253, 0.14);
+  --mf-border-strong: rgba(196, 181, 253, 0.28);
+
+  /* Semantic Status Colors */
+  --mf-success: #10B981;
+  --mf-success-soft: rgba(16, 185, 129, 0.16);
+  --mf-warning: #F59E0B;
+  --mf-warning-soft: rgba(245, 158, 11, 0.16);
+  --mf-danger: #EF4444;
+  --mf-danger-soft: rgba(239, 68, 68, 0.16);
+  --mf-info: #38BDF8;
+  --mf-info-soft: rgba(56, 189, 248, 0.16);
+
+  /* Shadows & Lighting */
+  --mf-shadow-sm: 0 4px 16px rgba(6, 5, 14, 0.28);
+  --mf-shadow-md: 0 12px 32px rgba(6, 5, 14, 0.42);
+  --mf-shadow-lg: 0 24px 64px rgba(6, 5, 14, 0.56);
+  --mf-shadow-glow: 0 0 36px rgba(139, 92, 246, 0.26);
+  --mf-hero-glow: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.24), transparent 62%);
+
+  /* Spacing & Sizing */
+  --mf-container-max: 1320px;
+  --mf-radius-xs: 8px;
+  --mf-radius-sm: 12px;
+  --mf-radius-md: 16px;
+  --mf-radius-lg: 22px;
+  --mf-radius-xl: 28px;
+  --mf-radius-pill: 9999px;
+
+  --mf-nav-height: 76px;
+  --mf-sidebar-width: 268px;
+  --mf-transition: 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Bootstrap variable overrides */
+  --bs-body-bg: var(--mf-bg);
+  --bs-body-color: var(--mf-text);
+  --bs-border-color: var(--mf-border);
+}
+
+[data-theme="light"] {
+  --mf-bg: #F8F7FC;
+  --mf-bg-elevated: #EFEBF9;
+  --mf-surface: #FFFFFF;
+  --mf-surface-hover: #F3EFFD;
+  --mf-surface-glass: rgba(255, 255, 255, 0.86);
+  --mf-primary: #7C3AED;
+  --mf-primary-hover: #6D28D9;
+  --mf-primary-soft: rgba(124, 58, 237, 0.11);
+  --mf-secondary: #A78BFA;
+  --mf-text: #211D35;
+  --mf-text-muted: #6B6680;
+  --mf-border: rgba(33, 29, 53, 0.11);
+  --mf-border-strong: rgba(124, 58, 237, 0.28);
+
+  --mf-shadow-sm: 0 4px 14px rgba(33, 29, 53, 0.06);
+  --mf-shadow-md: 0 12px 30px rgba(33, 29, 53, 0.09);
+  --mf-shadow-lg: 0 22px 54px rgba(33, 29, 53, 0.12);
+  --mf-shadow-glow: 0 10px 30px rgba(124, 58, 237, 0.18);
+  --mf-hero-glow: radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.14), transparent 62%);
+
+  --bs-body-bg: var(--mf-bg);
+  --bs-body-color: var(--mf-text);
+  --bs-border-color: var(--mf-border);
+}
+
+[dir="rtl"] body {
+  font-family: var(--mf-font-arabic);
+}
+

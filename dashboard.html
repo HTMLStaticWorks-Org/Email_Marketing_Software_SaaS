@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketer Dashboard — MailFlow SaaS</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <div class="mf-dash-shell">
+    <div class="mf-sidebar-backdrop" id="mf-dash-backdrop"></div>
+
+    <!-- Dedicated Marketer Dashboard Sidebar (11 Items) -->
+    <aside class="mf-sidebar" id="mf-dash-sidebar" aria-label="Dashboard Navigation">
+      <div class="mf-sidebar-header">
+        <a href="index.html" class="mf-brand">
+          <span class="mf-brand-mark" aria-hidden="true"><i data-lucide="send" style="width:18px;height:18px;"></i></span>
+          <span data-i18n="brand.name">MailFlow</span>
+        </a>
+        <button type="button" class="mf-icon-btn mf-sidebar-close-btn" id="mf-close-dash-drawer" aria-label="Close Sidebar">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <nav class="mf-sidebar-nav" id="mf-sidebar-nav">
+        <button type="button" class="mf-sidebar-link" data-dash-route="overview"><i data-lucide="layout-dashboard"></i><span data-i18n="dash.overview">Overview</span></button>
+        <button type="button" class="mf-sidebar-link" data-dash-route="campaigns"><i data-lucide="megaphone"></i><span data-i18n="dash.campaigns">Campaigns</span></button>
+        <button type="button" class="mf-sidebar-link" data-dash-route="builder"><i data-lucide="layout-template"></i><span data-i18n="dash.builder">Email Builder</span></button>
+        <button type="button" class="mf-sidebar-link" data-dash-route="contacts"><i data-lucide="users"></i><span data-i18n="dash.contacts">Contacts</span></button>
+        <button type="button" class="mf-sidebar-link" data-dash-route="segments"><i data-lucide="filter"></i><span data-i18n="dash.segments">Segments</span></button>
+        <button type="button" class="mf-sidebar-link" data-dash-route="automation"><i data-lucide="git-branch"></i><span data-i18n="dash.automation">Automation</span></button>
+        <button type="button" class="mf-sidebar-link" data-dash-route="templates"><i data-lucide="files"></i><span data-i18n="dash.templates">Templates</span></button>
+        <button type="button" class="mf-sidebar-link" data-dash-route="analytics"><i data-lucide="bar-chart-3"></i><span data-i18n="dash.analytics">Analytics</span></button>
+        <button type="button" class="mf-sidebar-link" data-dash-route="integrations"><i data-lucide="plug"></i><span data-i18n="dash.integrations">Integrations</span></button>
+        <button type="button" class="mf-sidebar-link" data-dash-route="settings"><i data-lucide="settings"></i><span data-i18n="dash.settings">Settings</span></button>
+      </nav>
+
+      <div class="mf-sidebar-footer">
+        <button type="button" class="mf-sidebar-link" id="mf-sidebar-logout" style="color:var(--mf-danger);">
+          <i data-lucide="log-out"></i>
+          <span data-i18n="dash.logout">Logout</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Dashboard Area -->
+    <div class="mf-dash-main">
+      <!-- Top Navigation -->
+      <header class="mf-topbar">
+        <div class="mf-topbar-left">
+          <button type="button" class="mf-icon-btn mf-dash-drawer-btn" id="mf-open-dash-drawer" aria-label="Open Dashboard Menu">
+            <i data-lucide="menu"></i>
+          </button>
+          <div>
+            <div class="small" style="color:var(--mf-text-muted);line-height:1.1;" id="mf-dash-breadcrumb">MailFlow / Overview</div>
+            <h1 class="h5 mb-0" id="mf-dash-title">Overview</h1>
+          </div>
+        </div>
+
+        <div class="mf-topbar-right">
+          <div class="mf-topbar-search">
+            <i data-lucide="search" class="mf-topbar-search-icon" style="width:15px;height:15px;"></i>
+            <input type="search" class="mf-input" id="mf-dash-global-search" placeholder="Search campaigns, contacts..." aria-label="Global Dashboard Search">
+          </div>
+
+          <!-- Notifications Dropdown -->
+          <div class="dropdown">
+            <button type="button" class="mf-icon-btn" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifications">
+              <i data-lucide="bell"></i>
+              <span class="mf-notif-dot"></span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-end p-3" style="width:300px;background:var(--mf-surface);border:1px solid var(--mf-border-strong);color:var(--mf-text);">
+              <div class="fw-bold small mb-2">Recent Notifications</div>
+              <div class="small py-2 border-bottom" style="border-color:var(--mf-border) !important;">Q4 AI Workflow Release hit 49.4% open rate.</div>
+              <div class="small py-2 border-bottom" style="border-color:var(--mf-border) !important;">318 Shopify contacts synced cleanly.</div>
+              <div class="small pt-2" style="color:var(--mf-text-muted);">Demo notifications · LocalStorage</div>
+            </div>
+          </div>
+
+          <button type="button" class="mf-icon-btn" data-mf-theme-toggle aria-label="Switch Theme">
+            <span data-mf-theme-icon><i data-lucide="sun"></i></span>
+          </button>
+
+          <button type="button" class="mf-icon-btn mf-dir-pill" data-mf-dir-toggle aria-label="Switch RTL/LTR">
+            <i data-lucide="languages" style="width:15px;height:15px;"></i>
+            <span data-mf-dir-label>RTL</span>
+          </button>
+
+          <!-- User Profile Dropdown -->
+          <div class="dropdown">
+            <button type="button" class="mf-btn mf-btn-ghost mf-btn-sm dropdown-toggle d-flex align-items-center gap-2" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://randomuser.me/api/portraits/women/88.jpg" alt="User Avatar" id="mf-topbar-avatar" style="width:26px;height:26px;border-radius:50%;object-fit:cover;">
+              <span class="d-none d-sm-inline" id="mf-topbar-username">Elena Vance</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" style="background:var(--mf-surface);border:1px solid var(--mf-border-strong);">
+              <li><a class="dropdown-item" href="#settings" style="color:var(--mf-text);">Account Settings</a></li>
+              <li><a class="dropdown-item" href="index.html" style="color:var(--mf-text);">Public Website</a></li>
+              <li><hr class="dropdown-divider" style="border-color:var(--mf-border);"></li>
+              <li><button type="button" class="dropdown-item text-danger" id="mf-topbar-logout">Logout</button></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- Demo Environment Notice -->
+      <div class="px-3 px-md-4 pt-3">
+        <div class="p-2 px-3 rounded-3 d-flex flex-wrap align-items-center justify-content-between gap-2 small" style="background:var(--mf-primary-soft);border:1px solid var(--mf-border-strong);color:var(--mf-text);">
+          <span data-i18n="dash.demoBanner">Frontend Demo Mode — Actions persist locally in your browser; no live emails or payments are sent.</span>
+          <span class="mf-badge mf-badge-primary">Marketer Workspace</span>
+        </div>
+      </div>
+
+      <!-- Active View Container -->
+      <main class="mf-dash-content" id="mf-dash-view-container">
+        <!-- Dynamically rendered by dashboard view modules -->
+      </main>
+    </div>
+  </div>
+
+  <!-- Shared Modal Host for Dashboard Views -->
+  <div class="modal fade" id="mfDashModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content" id="mfDashModalContent"></div>
+    </div>
+  </div>
+
+  <!-- Vendor Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+
+  <!-- MailFlow Core & Dashboard Modules -->
+  <script src="js/store.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/theme-rtl.js"></script>
+  <script src="js/ajax-mock.js"></script>
+  <script src="js/dashboard-core.js"></script>
+  <script src="js/dashboard-overview.js"></script>
+  <script src="js/dashboard-campaigns.js"></script>
+  <script src="js/dashboard-builder.js"></script>
+  <script src="js/dashboard-audience.js"></script>
+  <script src="js/dashboard-automation.js"></script>
+  <script src="js/dashboard-insights.js"></script>
+</body>
+</html>
+

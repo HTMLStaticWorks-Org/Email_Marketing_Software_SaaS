@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — MailFlow Managed Deliverability &amp; Onboarding</title>
+  <meta name="description" content="MailFlow SaaS services: dedicated IP warming, platform migration, custom email template design, and lifecycle automation consulting.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/public.css">
+</head>
+<body>
+  <canvas id="mf-three-bg" aria-hidden="true"></canvas>
+  <div id="mf-public-navbar-host"></div>
+
+  <main>
+    <!-- Hero -->
+    <section class="mf-hero pb-4">
+      <div class="mf-container">
+        <div class="mf-hero-centered">
+          <div class="mf-eyebrow mf-gsap-hero"><i data-lucide="briefcase" style="width:14px;height:14px;"></i> MailFlow Services</div>
+          <h1 class="mf-hero-title mf-gradient-text mf-gsap-hero" data-i18n="services.heroTitle">
+            Expert Deliverability &amp; Lifecycle Strategy, On Demand.
+          </h1>
+          <p class="mf-hero-desc mf-gsap-hero" data-i18n="services.heroDesc">
+            Pair MailFlow’s self-serve SaaS platform with hands-on migration, IP warming, custom RTL template design, and workflow architecture led by our specialists.
+          </p>
+          <div class="mf-hero-actions mf-gsap-hero mb-2">
+            <button type="button" class="mf-btn mf-btn-primary mf-btn-lg mf-open-service-modal" data-service="Full Onboarding Concierge">Book Service Demo</button>
+            <a href="pricing.html" class="mf-btn mf-btn-secondary mf-btn-lg">View SaaS Plans</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 Core Services Grid (Equal Height, Unique Images) -->
+    <section class="mf-section pt-4">
+      <div class="mf-container">
+        <div class="mf-section-header" data-aos="fade-up">
+          <div class="mf-eyebrow"><i data-lucide="sparkles" style="width:14px;height:14px;"></i> Advisory &amp; Implementation</div>
+          <h2 class="mf-section-title">Six Specialized Email Marketing Services</h2>
+          <p class="mf-section-desc">Select any engagement below to submit a simulated consultation request.</p>
+        </div>
+
+        <div class="mf-card-grid mf-card-grid-3">
+          <article class="mf-card mf-card-interactive" data-aos="fade-up">
+            <div class="mf-card-img-wrap">
+              <img src="assets/img/a%20(5).jpg" alt="Dedicated IP warming and inbox placement setup" loading="eager">
+            </div>
+            <div class="mf-card-body">
+              <span class="mf-badge mf-badge-success mb-2" style="width:fit-content;">Deliverability</span>
+              <h3 class="h5">Dedicated IP Warming &amp; DNS</h3>
+              <p class="small mb-0">Full SPF, DKIM, DMARC, and BIMI configuration plus a staged 21-day volume ramp to protect primary inbox placement.</p>
+            </div>
+            <div class="mf-card-footer">
+              <button type="button" class="mf-btn mf-btn-secondary mf-btn-sm w-100 mf-open-service-modal" data-service="Dedicated IP Warming & DNS">Request IP Audit</button>
+            </div>
+          </article>
+
+          <article class="mf-card mf-card-interactive" data-aos="fade-up" data-aos-delay="80">
+            <div class="mf-card-img-wrap">
+              <img src="assets/img/a%20(10).jpg" alt="Platform migration concierge" loading="eager">
+            </div>
+            <div class="mf-card-body">
+              <span class="mf-badge mf-badge-primary mb-2" style="width:fit-content;">Migration</span>
+              <h3 class="h5">Zero-Downtime Migration</h3>
+              <p class="small mb-0">Migrate contacts, suppression lists, segments, and templates cleanly from Mailchimp, Klaviyo, Brevo, or HubSpot.</p>
+            </div>
+            <div class="mf-card-footer">
+              <button type="button" class="mf-btn mf-btn-secondary mf-btn-sm w-100 mf-open-service-modal" data-service="Zero-Downtime Migration">Plan Migration</button>
+            </div>
+          </article>
+
+          <article class="mf-card mf-card-interactive" data-aos="fade-up" data-aos-delay="160">
+            <div class="mf-card-img-wrap">
+              <img src="assets/img/a%20(13).jpg" alt="Custom responsive email template design" loading="eager">
+            </div>
+            <div class="mf-card-body">
+              <span class="mf-badge mf-badge-info mb-2" style="width:fit-content;">Creative Studio</span>
+              <h3 class="h5">Custom LTR &amp; RTL Templates</h3>
+              <p class="small mb-0">Bespoke modular block systems tested across Apple Mail, Gmail Dark Mode, and Outlook desktop clients.</p>
+            </div>
+            <div class="mf-card-footer">
+              <button type="button" class="mf-btn mf-btn-secondary mf-btn-sm w-100 mf-open-service-modal" data-service="Custom LTR & RTL Templates">Request Design Pack</button>
+            </div>
+          </article>
+
+          <article class="mf-card mf-card-interactive" data-aos="fade-up">
+            <div class="mf-card-img-wrap">
+              <img src="assets/img/a%20(24).jpg" alt="Webhook and CRM integration engineering" loading="eager">
+            </div>
+            <div class="mf-card-body">
+              <span class="mf-badge mf-badge-warning mb-2" style="width:fit-content;">Engineering</span>
+              <h3 class="h5">CRM &amp; Webhook Architecture</h3>
+              <p class="small mb-0">Wire real-time product events, Stripe dunning triggers, and Salesforce/HubSpot attribution directly into MailFlow.</p>
+            </div>
+            <div class="mf-card-footer">
+              <button type="button" class="mf-btn mf-btn-secondary mf-btn-sm w-100 mf-open-service-modal" data-service="CRM & Webhook Architecture">Schedule Tech Call</button>
+            </div>
+          </article>
+
+          <article class="mf-card mf-card-interactive" data-aos="fade-up" data-aos-delay="80">
+            <div class="mf-card-img-wrap">
+              <img src="assets/img/a%20(16).jpg" alt="Lifecycle automation workflow strategy" loading="eager">
+            </div>
+            <div class="mf-card-body">
+              <span class="mf-badge mf-badge-primary mb-2" style="width:fit-content;">Strategy</span>
+              <h3 class="h5">Lifecycle Flow Optimization</h3>
+              <p class="small mb-0">Build high-converting Welcome, Cart Recovery, Trial Conversion, and Win-Back journeys tailored to your funnel.</p>
+            </div>
+            <div class="mf-card-footer">
+              <button type="button" class="mf-btn mf-btn-secondary mf-btn-sm w-100 mf-open-service-modal" data-service="Lifecycle Flow Optimization">Audit My Flows</button>
+            </div>
+          </article>
+
+          <article class="mf-card mf-card-interactive" data-aos="fade-up" data-aos-delay="160">
+            <div class="mf-card-img-wrap">
+              <img src="assets/img/a%20(25).jpg" alt="Reputation recovery and analytics review" loading="eager">
+            </div>
+            <div class="mf-card-body">
+              <span class="mf-badge mf-badge-success mb-2" style="width:fit-content;">Compliance</span>
+              <h3 class="h5">Inbox Reputation Recovery</h3>
+              <p class="small mb-0">Diagnose spam-folder placement, prune cold cohorts, and rebuild ISP trust scores with ongoing weekly monitoring.</p>
+            </div>
+            <div class="mf-card-footer">
+              <button type="button" class="mf-btn mf-btn-secondary mf-btn-sm w-100 mf-open-service-modal" data-service="Inbox Reputation Recovery">Recover Deliverability</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4-Step Service Delivery Process -->
+    <section class="mf-section pt-2">
+      <div class="mf-container">
+        <div class="mf-section-header" data-aos="fade-up">
+          <div class="mf-eyebrow"><i data-lucide="workflow" style="width:14px;height:14px;"></i> How We Engage</div>
+          <h2 class="mf-section-title">From Audit to Live Revenue in 14 Days</h2>
+        </div>
+
+        <div class="mf-card-grid mf-card-grid-4">
+          <article class="mf-card text-center" data-aos="fade-up">
+            <div class="mf-step-badge">1</div>
+            <h3 class="h6">Discovery &amp; DNS Audit</h3>
+            <p class="small mb-0">Review domain health, list hygiene, and current ESP bottlenecks.</p>
+          </article>
+          <article class="mf-card text-center" data-aos="fade-up" data-aos-delay="70">
+            <div class="mf-step-badge">2</div>
+            <h3 class="h6">Architecture Blueprint</h3>
+            <p class="small mb-0">Map segments, integrations, and visual automation triggers.</p>
+          </article>
+          <article class="mf-card text-center" data-aos="fade-up" data-aos-delay="140">
+            <div class="mf-step-badge">3</div>
+            <h3 class="h6">Template &amp; Flow QA</h3>
+            <p class="small mb-0">Build responsive LTR/RTL blocks and test across inbox clients.</p>
+          </article>
+          <article class="mf-card text-center" data-aos="fade-up" data-aos-delay="210">
+            <div class="mf-step-badge">4</div>
+            <h3 class="h6">Launch &amp; Weekly Tuning</h3>
+            <p class="small mb-0">Monitor open/CTR lift and scale sending volume safely.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advisory Tiers Comparison -->
+    <section class="mf-section pt-2">
+      <div class="mf-container">
+        <div class="mf-section-header" data-aos="fade-up">
+          <h2 class="mf-section-title">Support &amp; Advisory SLA Tiers</h2>
+          <p class="mf-section-desc">Compare included SaaS support with dedicated concierge add-ons.</p>
+        </div>
+
+        <div class="mf-table-wrap" data-aos="fade-up">
+          <table class="mf-table">
+            <thead>
+              <tr><th>Service Deliverable</th><th>Standard SaaS</th><th>Growth Concierge</th><th>Enterprise Dedicated</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>DNS &amp; DMARC Verification</strong></td><td>Guided Self-Serve</td><td>Hands-On Setup</td><td>Multi-Domain Managed</td></tr>
+              <tr><td><strong>ESP List &amp; Template Migration</strong></td><td>CSV Importer</td><td>Up to 5 Flows + Lists</td><td>Full White-Glove</td></tr>
+              <tr><td><strong>Deliverability Reviews</strong></td><td>Monthly Digest</td><td>Bi-Weekly Check-In</td><td>Weekly + 24/7 Engineer</td></tr>
+              <tr><td><strong>Response SLA</strong></td><td>24 Hours</td><td>4 Business Hours</td><td>&lt; 30 Minutes Priority</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Service Request Modal -->
+  <div class="modal fade" id="mfServiceModal" tabindex="-1" aria-labelledby="mfServiceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="mfServiceModalLabel">Request MailFlow Service (Demo)</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form id="mf-service-form" novalidate>
+          <div class="modal-body d-flex flex-column gap-3">
+            <div>
+              <label class="mf-label" for="srv-topic">Selected Service</label>
+              <input type="text" class="mf-input" id="srv-topic" readonly>
+            </div>
+            <div>
+              <label class="mf-label" for="srv-name">Your Name</label>
+              <input type="text" class="mf-input" id="srv-name" placeholder="Elena Vance" required>
+            </div>
+            <div>
+              <label class="mf-label" for="srv-email">Work Email</label>
+              <input type="email" class="mf-input" id="srv-email" placeholder="elena@company.io" required>
+            </div>
+            <div>
+              <label class="mf-label" for="srv-notes">Project Scope</label>
+              <textarea class="mf-textarea" id="srv-notes" rows="3" placeholder="Tell us your current ESP and monthly send volume..."></textarea>
+            </div>
+            <span class="mf-demo-pill"><i data-lucide="info" style="width:13px;height:13px;"></i> Demo AJAX Submission — No external email sent</span>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="mf-btn mf-btn-ghost mf-btn-sm" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="mf-btn mf-btn-primary mf-btn-sm">Submit Request</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="mf-public-footer-host"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+
+  <script src="js/store.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/theme-rtl.js"></script>
+  <script src="js/ajax-mock.js"></script>
+  <script src="js/three-bg.js"></script>
+  <script src="js/public-nav.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var modalEl = document.getElementById('mfServiceModal');
+      var modal = modalEl && window.bootstrap ? new window.bootstrap.Modal(modalEl) : null;
+      document.querySelectorAll('.mf-open-service-modal').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          document.getElementById('srv-topic').value = btn.getAttribute('data-service') || 'MailFlow Service';
+          if (modal) modal.show();
+        });
+      });
+      var form = document.getElementById('mf-service-form');
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var topic = document.getElementById('srv-topic').value;
+          var name = (document.getElementById('srv-name').value || '').trim();
+          var email = (document.getElementById('srv-email').value || '').trim();
+          if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            window.MailFlowAppearance.toast('Please enter your name and valid work email.', 'error');
+            return;
+          }
+          window.MailFlowAjax.post('services/request', { topic: topic, name: name, email: email }).then(function () {
+            if (modal) modal.hide();
+            form.reset();
+            window.MailFlowAppearance.toast('Demo service consultation logged for ' + topic + '.', 'success');
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
+

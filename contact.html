@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — MailFlow Email Marketing SaaS</title>
+  <meta name="description" content="Contact MailFlow sales, deliverability engineers, and customer onboarding specialists for live product demos, enterprise migrations, and SLA support.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/public.css">
+</head>
+<body>
+  <canvas id="mf-three-bg" aria-hidden="true"></canvas>
+  <div id="mf-public-navbar-host"></div>
+
+  <main>
+    <!-- Hero -->
+    <section class="mf-hero pb-4">
+      <div class="mf-container">
+        <div class="mf-hero-centered">
+          <div class="mf-eyebrow mf-gsap-hero"><i data-lucide="message-square" style="width:14px;height:14px;"></i> Contact MailFlow · 2026</div>
+          <h1 class="mf-hero-title mf-gradient-text mf-gsap-hero" data-i18n="contact.heroTitle">
+            Let’s Design Your Next Email Milestone Together.
+          </h1>
+          <p class="mf-hero-desc mf-gsap-hero" data-i18n="contact.heroDesc">
+            Reach our deliverability engineers, enterprise onboarding specialists, or agency partner team — fast responses in both English and Arabic.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Direct Contact Channels -->
+    <section class="mf-section pt-2">
+      <div class="mf-container">
+        <div class="mf-card-grid mf-card-grid-3">
+          <article class="mf-card mf-card-interactive" data-aos="fade-up">
+            <div class="mf-card-icon"><i data-lucide="sparkles"></i></div>
+            <div class="mf-card-body">
+              <div class="d-flex align-items-center justify-content-between gap-2 mb-2">
+                <h2 class="h5 mb-0">Sales &amp; Migrations</h2>
+                <span class="mf-badge mf-badge-primary">&lt; 2 hrs SLA</span>
+              </div>
+              <p class="small mb-3">Custom send volumes, dedicated IP pools, and white-glove ESP migrations with zero downtime.</p>
+              <div class="small fw-semibold mb-0" style="color:var(--mf-text);">sales@mailflow.io</div>
+            </div>
+            <div class="mf-card-footer">
+              <a href="#contact-form-section" data-contact-topic="Product Demo & Enterprise" class="mf-btn mf-btn-secondary mf-btn-sm w-100">Book a Walkthrough</a>
+            </div>
+          </article>
+
+          <article class="mf-card mf-card-interactive" data-aos="fade-up" data-aos-delay="80">
+            <div class="mf-card-icon"><i data-lucide="shield-check"></i></div>
+            <div class="mf-card-body">
+              <div class="d-flex align-items-center justify-content-between gap-2 mb-2">
+                <h2 class="h5 mb-0">Deliverability Desk</h2>
+                <span class="mf-badge mf-badge-success">24/7 Live</span>
+              </div>
+              <p class="small mb-3">SPF, DKIM, DMARC alignment audits, domain warm-up schedules, and inbox placement triage.</p>
+              <div class="small fw-semibold mb-0" style="color:var(--mf-text);">support@mailflow.io</div>
+            </div>
+            <div class="mf-card-footer">
+              <a href="#contact-form-section" data-contact-topic="Deliverability Audit" class="mf-btn mf-btn-secondary mf-btn-sm w-100">Request Inbox Audit</a>
+            </div>
+          </article>
+
+          <article class="mf-card mf-card-interactive" data-aos="fade-up" data-aos-delay="160">
+            <div class="mf-card-icon"><i data-lucide="handshake"></i></div>
+            <div class="mf-card-body">
+              <div class="d-flex align-items-center justify-content-between gap-2 mb-2">
+                <h2 class="h5 mb-0">Agencies &amp; Partners</h2>
+                <span class="mf-badge mf-badge-accent">Partner Program</span>
+              </div>
+              <p class="small mb-3">Multi-workspace client billing, co-branded template libraries, and recurring agency rev-share.</p>
+              <div class="small fw-semibold mb-0" style="color:var(--mf-text);">partners@mailflow.io</div>
+            </div>
+            <div class="mf-card-footer">
+              <a href="#contact-form-section" data-contact-topic="Agency Partnership" class="mf-btn mf-btn-secondary mf-btn-sm w-100">Apply as Partner</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form & Concierge Offices Split -->
+    <section class="mf-section pt-2" id="contact-form-section">
+      <div class="mf-container">
+        <div class="mf-feature-band" data-aos="fade-up">
+          <div class="mf-split-panel align-items-start">
+            <div>
+              <span class="mf-badge mf-badge-primary mb-2">Direct Inquiry Form</span>
+              <h2 class="h3 mb-2" data-i18n="contact.formTitle">Send Us a Direct Message</h2>
+              <p class="small mb-4">Tell us about your current list size, migration timeline, or custom automation goals.</p>
+
+              <div id="mf-contact-confirmation" class="mf-card mb-4 d-none" style="border-color:var(--mf-success);background:var(--mf-surface-glass);">
+                <div class="d-flex align-items-center gap-2 mb-1">
+                  <i data-lucide="check-circle-2" style="width:18px;height:18px;color:var(--mf-success);"></i>
+                  <strong class="small" style="color:var(--mf-text);">Inquiry Confirmed — <span id="mf-contact-ref">MF-2026-0000</span></strong>
+                </div>
+                <p class="small mb-0">Saved locally in Demo Mode. Our solutions team responds within one business day.</p>
+              </div>
+
+              <form id="mf-contact-form" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="contact-name" class="form-label small fw-semibold">Full Name *</label>
+                    <input type="text" class="mf-input" id="contact-name" placeholder="Jordan Patel" required>
+                    <div class="invalid-feedback">Please enter your full name.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="contact-email" class="form-label small fw-semibold">Work Email *</label>
+                    <input type="email" class="mf-input" id="contact-email" placeholder="jordan@company.com" required>
+                    <div class="invalid-feedback">Please enter a valid work email.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="contact-company" class="form-label small fw-semibold">Company / Domain</label>
+                    <input type="text" class="mf-input" id="contact-company" placeholder="acme-saas.io">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="contact-topic" class="form-label small fw-semibold">Inquiry Topic</label>
+                    <select class="mf-select" id="contact-topic">
+                      <option value="Product Demo & Enterprise">Product Demo &amp; Enterprise</option>
+                      <option value="Deliverability Audit">Deliverability Audit</option>
+                      <option value="Agency Partnership">Agency Partnership</option>
+                      <option value="Billing & Migrations">Billing &amp; Migrations</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label for="contact-volume" class="form-label small fw-semibold">Monthly Send Volume</label>
+                    <select class="mf-select" id="contact-volume">
+                      <option value="Up to 50k / mo">Up to 50,000 emails / month</option>
+                      <option value="50k - 250k / mo" selected>50,000 – 250,000 emails / month</option>
+                      <option value="250k - 1M / mo">250,000 – 1,000,000 emails / month</option>
+                      <option value="1M+ Dedicated IP">1,000,000+ emails / month (Dedicated IP)</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label for="contact-message" class="form-label small fw-semibold">How can we help? *</label>
+                    <textarea class="mf-textarea" id="contact-message" rows="4" placeholder="Share your current ESP, subscriber count, and key goals..." required></textarea>
+                    <div class="invalid-feedback">Please enter a short message (at least 10 characters).</div>
+                  </div>
+                  <div class="col-12 pt-1">
+                    <button type="submit" id="mf-contact-submit" class="mf-btn mf-btn-primary mf-btn-lg w-100">
+                      <i data-lucide="send" style="width:17px;height:17px;"></i>
+                      <span data-i18n="contact.submitBtn">Send Message</span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div>
+              <div class="mf-media-frame mb-4">
+                <img src="assets/img/a%20(12).jpg" alt="MailFlow global onboarding and customer engineering hub" loading="eager">
+              </div>
+
+              <div class="mf-card-grid mf-card-grid-2" style="gap:1rem;">
+                <div class="mf-card" style="padding:1.25rem;">
+                  <div class="small fw-bold mb-1" style="color:var(--mf-primary);">San Francisco · HQ</div>
+                  <div class="small mb-0">548 Market St, Suite 42100<br>San Francisco, CA 94104</div>
+                </div>
+                <div class="mf-card" style="padding:1.25rem;">
+                  <div class="small fw-bold mb-1" style="color:var(--mf-accent);">Dubai · MENA RTL Hub</div>
+                  <div class="small mb-0">DIFC Gate Avenue, Zone D<br>Dubai, UAE (Sun–Thu)</div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <a href="dashboard.html" class="mf-btn mf-btn-secondary mf-btn-sm">Launch Demo Workspace</a>
+                <a href="services.html" class="mf-btn mf-btn-ghost mf-btn-sm">View Managed Services</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick FAQ -->
+    <section class="mf-section pt-2">
+      <div class="mf-container" style="max-width:880px;">
+        <div class="mf-section-header" data-aos="fade-up">
+          <div class="mf-eyebrow"><i data-lucide="help-circle" style="width:14px;height:14px;"></i> Before You Write</div>
+          <h2 class="mf-section-title">Common Onboarding Questions</h2>
+        </div>
+        <div class="mf-faq-list" data-aos="fade-up">
+          <div class="mf-faq-item is-open">
+            <button type="button" class="mf-faq-trigger">
+              <span>How quickly can our team migrate contacts and workflows?</span>
+              <i data-lucide="chevron-down" class="mf-faq-chevron"></i>
+            </button>
+            <div class="mf-faq-panel">
+              Self-serve CSV and API imports finish in minutes. For Growth and Scale migrations, our onboarding engineers recreate key automation flows and verify DNS records within 3–5 business days.
+            </div>
+          </div>
+          <div class="mf-faq-item">
+            <button type="button" class="mf-faq-trigger">
+              <span>Do you support Arabic RTL templates and bilingual campaigns?</span>
+              <i data-lucide="chevron-down" class="mf-faq-chevron"></i>
+            </button>
+            <div class="mf-faq-panel">
+              Yes. MailFlow ships with native LTR &amp; RTL block direction controls, logical CSS email markup, and bilingual team support across North America, EMEA, and MENA.
+            </div>
+          </div>
+          <div class="mf-faq-item">
+            <button type="button" class="mf-faq-trigger">
+              <span>Can we request a security questionnaire or GDPR DPA?</span>
+              <i data-lucide="chevron-down" class="mf-faq-chevron"></i>
+            </button>
+            <div class="mf-faq-panel">
+              Select "Product Demo &amp; Enterprise" above and mention SOC 2 Type II or GDPR DPA in your message — our compliance packet is sent immediately upon verification.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="mf-public-footer-host"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+
+  <script src="js/store.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/theme-rtl.js"></script>
+  <script src="js/ajax-mock.js"></script>
+  <script src="js/three-bg.js"></script>
+  <script src="js/public-nav.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>
+

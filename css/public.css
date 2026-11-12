@@ -54,6 +54,18 @@
   z-index: 1;
 }
 
+.mf-hero-has-bg .mf-btn-ghost {
+  background: var(--mf-surface-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-color: var(--mf-border-strong);
+}
+
+.mf-hero-has-bg .mf-btn-ghost:hover {
+  background: var(--mf-surface);
+  border-color: var(--mf-primary);
+}
+
 @media (max-width: 767.98px) {
   .mf-hero {
     padding-block: 3.5rem 3rem;

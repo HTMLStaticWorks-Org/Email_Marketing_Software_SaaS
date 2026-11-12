@@ -20,7 +20,7 @@
   --mf-primary-soft: rgba(139, 92, 246, 0.16);
   --mf-secondary: #C4B5FD;
   --mf-text: #F8F7FC;
-  --mf-text-muted: #A6A1B5;
+  --mf-text-muted: #B2ADC4;
   --mf-border: rgba(196, 181, 253, 0.14);
   --mf-border-strong: rgba(196, 181, 253, 0.28);
 
@@ -57,6 +57,7 @@
   /* Bootstrap variable overrides */
   --bs-body-bg: var(--mf-bg);
   --bs-body-color: var(--mf-text);
+  --bs-heading-color: var(--mf-text);
   --bs-border-color: var(--mf-border);
 }
 
@@ -83,6 +84,7 @@
 
   --bs-body-bg: var(--mf-bg);
   --bs-body-color: var(--mf-text);
+  --bs-heading-color: var(--mf-text);
   --bs-border-color: var(--mf-border);
 }
 

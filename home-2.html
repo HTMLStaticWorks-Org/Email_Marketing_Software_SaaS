@@ -25,7 +25,11 @@
 
   <main>
     <!-- 1. Asymmetric Split Hero (Distinct from Home 1) -->
-    <section class="mf-hero">
+    <section class="mf-hero mf-hero-has-bg">
+      <div class="mf-hero-bg-wrap" aria-hidden="true">
+        <img src="assets/img/a%20(26).jpg" alt="" class="mf-hero-bg-img" loading="eager">
+        <div class="mf-hero-bg-scrim"></div>
+      </div>
       <div class="mf-container">
         <div class="mf-h2-hero-grid">
           <div class="text-start mf-gsap-hero">
@@ -151,7 +155,12 @@
           <article class="mf-card mf-bento-5" data-aos="fade-up" data-aos-delay="80">
             <span class="mf-badge mf-badge-success mb-3" style="width:fit-content;">Deliverability Shield</span>
             <h3 class="h4">Pre-Send Spam &amp; DNS Check</h3>
-            <p>Every campaign is automatically scanned for SPF, DKIM, DMARC alignment and broken links before leaving your queue.</p>
+            <p class="mb-3">Every campaign is automatically scanned for SPF, DKIM, DMARC alignment and broken links before leaving your queue.</p>
+            <ul class="mf-check-list mb-4">
+              <li><i data-lucide="check-circle-2"></i><span>Continuous monitoring across 40+ global ISP blocklists</span></li>
+              <li><i data-lucide="check-circle-2"></i><span>HTML weight, image alt-text &amp; dark-mode CSS fallback scan</span></li>
+              <li><i data-lucide="check-circle-2"></i><span>One-click bounce suppression and domain warm-up pacing</span></li>
+            </ul>
             <div class="mt-auto p-3 rounded-3 d-flex flex-column gap-2" style="background:var(--mf-bg-elevated);border:1px solid var(--mf-border);">
               <div class="d-flex justify-content-between small"><span>DMARC Alignment</span><span class="mf-badge mf-badge-success">Verified</span></div>
               <div class="d-flex justify-content-between small"><span>Link Reputation</span><span class="mf-badge mf-badge-success">Clean</span></div>
@@ -162,7 +171,21 @@
           <article class="mf-card mf-bento-5" data-aos="fade-up">
             <span class="mf-badge mf-badge-info mb-3" style="width:fit-content;">Bi-Directional UI</span>
             <h3 class="h4">Native LTR &amp; RTL Campaigns</h3>
-            <p>Design English and Arabic campaigns side by side with mirrored layouts, logical spacing, and crisp dark-mode contrast.</p>
+            <p class="mb-3">Design English and Arabic campaigns side by side with mirrored layouts, logical spacing, and crisp dark-mode contrast.</p>
+            <ul class="mf-check-list mb-3">
+              <li><i data-lucide="check-circle-2"></i><span>Automatic Cairo Arabic &amp; Plus Jakarta Sans font pairing</span></li>
+              <li><i data-lucide="check-circle-2"></i><span>Mirrored headers, CTA alignments &amp; responsive grid padding</span></li>
+            </ul>
+            <div class="p-3 rounded-3 mb-3 d-flex flex-column gap-2" style="background:var(--mf-bg-elevated);border:1px solid var(--mf-border);">
+              <div class="d-flex justify-content-between align-items-center small">
+                <span style="color:var(--mf-text-muted);">EN · LTR</span>
+                <span class="fw-semibold" style="color:var(--mf-text);">Welcome to MailFlow Studio</span>
+              </div>
+              <div class="d-flex justify-content-between align-items-center small">
+                <span style="color:var(--mf-text-muted);">AR · RTL</span>
+                <span class="fw-semibold" dir="rtl" style="color:var(--mf-text);">مرحباً بك في استوديو MailFlow</span>
+              </div>
+            </div>
             <div class="mt-auto d-flex flex-wrap gap-2">
               <button type="button" class="mf-btn mf-btn-secondary mf-btn-sm" data-mf-dir-toggle>Switch RTL / LTR</button>
               <button type="button" class="mf-btn mf-btn-ghost mf-btn-sm" data-mf-theme-toggle>Switch Light / Dark</button>

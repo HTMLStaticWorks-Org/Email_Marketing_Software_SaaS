@@ -34,23 +34,24 @@
               <li><a href="services.html" class="mf-nav-link ${active === 'services.html' ? 'active' : ''}" data-i18n="nav.services">Services</a></li>
               <li><a href="features.html" class="mf-nav-link ${active === 'features.html' ? 'active' : ''}" data-i18n="nav.features">Features</a></li>
               <li><a href="pricing.html" class="mf-nav-link ${active === 'pricing.html' ? 'active' : ''}" data-i18n="nav.pricing">Pricing</a></li>
+              <li><a href="contact.html" class="mf-nav-link ${active === 'contact.html' ? 'active' : ''}" data-i18n="nav.contact">Contact</a></li>
             </ul>
           </nav>
 
           <div class="mf-nav-actions">
-            <button type="button" class="mf-icon-btn" data-mf-theme-toggle aria-label="Switch Theme" title="Switch Theme">
-              <span data-mf-theme-icon><i data-lucide="sun"></i></span>
-            </button>
-            <button type="button" class="mf-icon-btn mf-dir-pill" data-mf-dir-toggle aria-label="Switch RTL/LTR" title="Switch Direction">
-              <i data-lucide="languages" style="width:15px;height:15px;"></i>
-              <span data-mf-dir-label>RTL</span>
-            </button>
-            <a href="login.html" class="mf-btn mf-btn-ghost mf-btn-sm" data-i18n="nav.login">Login</a>
             <a href="dashboard.html" class="mf-btn mf-btn-secondary mf-btn-sm">
               <i data-lucide="layout-dashboard" style="width:15px;height:15px;"></i>
               <span data-i18n="nav.dashboard">Dashboard</span>
             </a>
+            <a href="login.html" class="mf-btn mf-btn-ghost mf-btn-sm" data-i18n="nav.login">Login</a>
             <a href="register.html" class="mf-btn mf-btn-primary mf-btn-sm" data-i18n="nav.getStarted">Get Started</a>
+            <button type="button" class="mf-icon-btn" data-mf-theme-toggle aria-label="Switch Theme" title="Switch Theme">
+              <span data-mf-theme-icon><i data-lucide="sun"></i></span>
+            </button>
+            <button type="button" class="mf-icon-btn mf-dir-pill" data-mf-dir-toggle aria-label="Switch RTL/LTR" title="Switch RTL / LTR Direction">
+              <i data-lucide="arrow-left-right" style="width:14px;height:14px;"></i>
+              <span data-mf-dir-label>RTL</span>
+            </button>
           </div>
 
           <button type="button" class="mf-icon-btn mf-hamburger-btn" id="mf-open-mobile-menu" aria-label="Open Menu" aria-expanded="false" aria-controls="mf-mobile-drawer">
@@ -97,6 +98,10 @@
               <span data-i18n="nav.pricing">Pricing</span>
               <i data-lucide="chevron-right" class="mf-rtl-flip" style="width:16px;height:16px;"></i>
             </a>
+            <a href="contact.html" class="mf-mobile-nav-link ${active === 'contact.html' ? 'active' : ''}">
+              <span data-i18n="nav.contact">Contact</span>
+              <i data-lucide="chevron-right" class="mf-rtl-flip" style="width:16px;height:16px;"></i>
+            </a>
           </div>
 
           <div class="mf-mobile-controls">
@@ -106,7 +111,7 @@
                 <span data-mf-theme-label>Light</span>
               </button>
               <button type="button" class="mf-mobile-toggle-btn" data-mf-dir-toggle>
-                <i data-lucide="languages" style="width:16px;height:16px;"></i>
+                <i data-lucide="arrow-left-right" style="width:15px;height:15px;"></i>
                 <span data-mf-dir-label>RTL</span>
               </button>
             </div>
@@ -285,10 +290,33 @@
     }
   }
 
+  function initBackToTop() {
+    if (document.getElementById('mf-back-to-top')) return;
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.id = 'mf-back-to-top';
+    btn.className = 'mf-back-to-top';
+    btn.setAttribute('aria-label', 'Back to top');
+    btn.setAttribute('title', 'Back to top');
+    btn.innerHTML = '<i data-lucide="arrow-up"></i>';
+    document.body.appendChild(btn);
+
+    const toggleVisibility = () => {
+      btn.classList.toggle('is-visible', window.scrollY > 280);
+    };
+
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
+    toggleVisibility();
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     renderPublicNavbar();
     renderPublicFooter();
     initFaqAccordions();
+    initBackToTop();
     if (window.MailFlowAppearance) {
       window.MailFlowAppearance.apply();
     }

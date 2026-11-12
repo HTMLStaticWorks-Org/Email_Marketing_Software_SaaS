@@ -32,6 +32,11 @@
         </button>
       </div>
 
+      <div class="mf-sidebar-search">
+        <i data-lucide="search" class="mf-sidebar-search-icon" style="width:15px;height:15px;"></i>
+        <input type="search" class="mf-input" id="mf-dash-global-search" placeholder="Search workspace..." aria-label="Global Dashboard Search">
+      </div>
+
       <nav class="mf-sidebar-nav" id="mf-sidebar-nav">
         <button type="button" class="mf-sidebar-link" data-dash-route="overview"><i data-lucide="layout-dashboard"></i><span data-i18n="dash.overview">Overview</span></button>
         <button type="button" class="mf-sidebar-link" data-dash-route="campaigns"><i data-lucide="megaphone"></i><span data-i18n="dash.campaigns">Campaigns</span></button>
@@ -46,6 +51,23 @@
       </nav>
 
       <div class="mf-sidebar-footer">
+        <!-- Admin Profile Dropdown Moved to Sidebar -->
+        <div class="dropup w-100">
+          <button type="button" class="mf-sidebar-admin-btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Admin Menu">
+            <span class="d-flex align-items-center gap-2 min-w-0">
+              <img src="https://randomuser.me/api/portraits/women/88.jpg" alt="Admin Avatar" id="mf-topbar-avatar" style="width:30px;height:30px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+              <span class="d-flex flex-column text-start min-w-0">
+                <span class="small fw-semibold text-truncate" id="mf-topbar-username" style="color:var(--mf-text);line-height:1.2;">Elena Vance</span>
+                <span style="font-size:0.7rem;color:var(--mf-text-muted);line-height:1.1;">Workspace Admin</span>
+              </span>
+            </span>
+          </button>
+          <ul class="dropdown-menu w-100 p-1">
+            <li><a class="dropdown-item" href="#settings"><i data-lucide="settings" style="width:15px;height:15px;display:inline;margin-inline-end:6px;"></i>Account Settings</a></li>
+            <li><a class="dropdown-item" href="index.html"><i data-lucide="globe" style="width:15px;height:15px;display:inline;margin-inline-end:6px;"></i>Public Website</a></li>
+          </ul>
+        </div>
+
         <button type="button" class="mf-sidebar-link" id="mf-sidebar-logout" style="color:var(--mf-danger);">
           <i data-lucide="log-out"></i>
           <span data-i18n="dash.logout">Logout</span>
@@ -55,31 +77,26 @@
 
     <!-- Main Dashboard Area -->
     <div class="mf-dash-main">
-      <!-- Top Navigation -->
+      <!-- Top Navigation (Heading Left + Notification, Theme, RTL Alone Right) -->
       <header class="mf-topbar">
         <div class="mf-topbar-left">
           <button type="button" class="mf-icon-btn mf-dash-drawer-btn" id="mf-open-dash-drawer" aria-label="Open Dashboard Menu">
             <i data-lucide="menu"></i>
           </button>
-          <div>
+          <div class="mf-topbar-title-wrap">
             <div class="small" style="color:var(--mf-text-muted);line-height:1.1;" id="mf-dash-breadcrumb">MailFlow / Overview</div>
             <h1 class="h5 mb-0" id="mf-dash-title">Overview</h1>
           </div>
         </div>
 
         <div class="mf-topbar-right">
-          <div class="mf-topbar-search">
-            <i data-lucide="search" class="mf-topbar-search-icon" style="width:15px;height:15px;"></i>
-            <input type="search" class="mf-input" id="mf-dash-global-search" placeholder="Search campaigns, contacts..." aria-label="Global Dashboard Search">
-          </div>
-
           <!-- Notifications Dropdown -->
           <div class="dropdown">
             <button type="button" class="mf-icon-btn" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifications">
               <i data-lucide="bell"></i>
               <span class="mf-notif-dot"></span>
             </button>
-            <div class="dropdown-menu dropdown-menu-end p-3" style="width:300px;background:var(--mf-surface);border:1px solid var(--mf-border-strong);color:var(--mf-text);">
+            <div class="dropdown-menu dropdown-menu-end p-3" style="width:300px;max-width:calc(100vw - 2rem);">
               <div class="fw-bold small mb-2">Recent Notifications</div>
               <div class="small py-2 border-bottom" style="border-color:var(--mf-border) !important;">Q4 AI Workflow Release hit 49.4% open rate.</div>
               <div class="small py-2 border-bottom" style="border-color:var(--mf-border) !important;">318 Shopify contacts synced cleanly.</div>
@@ -87,28 +104,14 @@
             </div>
           </div>
 
-          <button type="button" class="mf-icon-btn" data-mf-theme-toggle aria-label="Switch Theme">
+          <button type="button" class="mf-icon-btn" data-mf-theme-toggle aria-label="Switch Theme" title="Switch Theme">
             <span data-mf-theme-icon><i data-lucide="sun"></i></span>
           </button>
 
-          <button type="button" class="mf-icon-btn mf-dir-pill" data-mf-dir-toggle aria-label="Switch RTL/LTR">
-            <i data-lucide="languages" style="width:15px;height:15px;"></i>
+          <button type="button" class="mf-icon-btn mf-dir-pill" data-mf-dir-toggle aria-label="Switch RTL/LTR" title="Switch Direction">
+            <i data-lucide="arrow-left-right" style="width:14px;height:14px;"></i>
             <span data-mf-dir-label>RTL</span>
           </button>
-
-          <!-- User Profile Dropdown -->
-          <div class="dropdown">
-            <button type="button" class="mf-btn mf-btn-ghost mf-btn-sm dropdown-toggle d-flex align-items-center gap-2" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="https://randomuser.me/api/portraits/women/88.jpg" alt="User Avatar" id="mf-topbar-avatar" style="width:26px;height:26px;border-radius:50%;object-fit:cover;">
-              <span class="d-none d-sm-inline" id="mf-topbar-username">Elena Vance</span>
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end" style="background:var(--mf-surface);border:1px solid var(--mf-border-strong);">
-              <li><a class="dropdown-item" href="#settings" style="color:var(--mf-text);">Account Settings</a></li>
-              <li><a class="dropdown-item" href="index.html" style="color:var(--mf-text);">Public Website</a></li>
-              <li><hr class="dropdown-divider" style="border-color:var(--mf-border);"></li>
-              <li><button type="button" class="dropdown-item text-danger" id="mf-topbar-logout">Logout</button></li>
-            </ul>
-          </div>
         </div>
       </header>
 

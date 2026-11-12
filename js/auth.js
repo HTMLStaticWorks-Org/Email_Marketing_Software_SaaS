@@ -38,7 +38,7 @@
       });
     }
 
-    // Google Login Demo
+    // Social Auth Demo (Google & GitHub)
     const googleBtn = document.getElementById('mf-google-demo-btn');
     if (googleBtn) {
       googleBtn.addEventListener('click', () => {
@@ -48,6 +48,20 @@
             session: { ...prev.session, loggedIn: true }
           }));
           window.MailFlowAppearance.toast('Signed in via Google Demo UI! Redirecting...', 'success');
+          setTimeout(() => { window.location.href = 'dashboard.html#overview'; }, 600);
+        });
+      });
+    }
+
+    const githubBtn = document.getElementById('mf-github-demo-btn');
+    if (githubBtn) {
+      githubBtn.addEventListener('click', () => {
+        window.MailFlowAjax.post('auth/github', { provider: 'github-demo' }).then(() => {
+          window.MailFlowStore.setState((prev) => ({
+            ...prev,
+            session: { ...prev.session, loggedIn: true }
+          }));
+          window.MailFlowAppearance.toast('Signed in via GitHub Demo UI! Redirecting...', 'success');
           setTimeout(() => { window.location.href = 'dashboard.html#overview'; }, 600);
         });
       });

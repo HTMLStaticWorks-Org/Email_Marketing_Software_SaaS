@@ -197,6 +197,24 @@
 
     const initial = window.location.hash.replace('#', '').toLowerCase() || 'overview';
     navigate(initial);
+
+    // Floating Back To Top Button in Dashboard
+    if (!document.getElementById('mf-back-to-top')) {
+      const topBtn = document.createElement('button');
+      topBtn.type = 'button';
+      topBtn.id = 'mf-back-to-top';
+      topBtn.className = 'mf-back-to-top';
+      topBtn.setAttribute('aria-label', 'Back to top');
+      topBtn.setAttribute('title', 'Back to top');
+      topBtn.innerHTML = '<i data-lucide="arrow-up"></i>';
+      document.body.appendChild(topBtn);
+      if (window.lucide) window.lucide.createIcons({ root: topBtn });
+
+      const syncTopBtn = () => topBtn.classList.toggle('is-visible', window.scrollY > 240);
+      window.addEventListener('scroll', syncTopBtn, { passive: true });
+      syncTopBtn();
+      topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    }
   });
 
   window.MailFlowDash = {

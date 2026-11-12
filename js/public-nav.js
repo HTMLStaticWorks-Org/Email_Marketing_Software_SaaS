@@ -44,7 +44,6 @@
               <span data-i18n="nav.dashboard">Dashboard</span>
             </a>
             <a href="login.html" class="mf-btn mf-btn-ghost mf-btn-sm" data-i18n="nav.login">Login</a>
-            <a href="register.html" class="mf-btn mf-btn-primary mf-btn-sm" data-i18n="nav.getStarted">Get Started</a>
             <button type="button" class="mf-icon-btn" data-mf-theme-toggle aria-label="Switch Theme" title="Switch Theme">
               <span data-mf-theme-icon><i data-lucide="sun"></i></span>
             </button>
@@ -120,7 +119,6 @@
               <span data-i18n="nav.dashboard">Dashboard</span>
             </a>
             <a href="login.html" class="mf-btn mf-btn-ghost w-100" data-i18n="nav.login">Login</a>
-            <a href="register.html" class="mf-btn mf-btn-primary w-100" data-i18n="nav.getStarted">Get Started</a>
           </div>
         </div>
       </div>
